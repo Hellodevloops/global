@@ -2,10 +2,6 @@
 
 <html lang="en">
 
-
-
-
-	
 <head>
 
 		<meta charset="utf-8">
@@ -19,8 +15,8 @@
 		<title>Global Consltancy - Immigration and Visa Consulting Website Template</title>
 							
 		<!-- FAVICON AND TOUCH ICONS  -->
-		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+		<link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
 		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
@@ -32,36 +28,36 @@
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900&amp;display=swap" rel="stylesheet">
 
 		<!-- BOOTSTRAP CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 				
 		<!-- FONT ICONS -->
-		<link href="../../../../../use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" crossorigin="anonymous">		
-		<link href="css/flaticon.css" rel="stylesheet">
+		<link href="{{asset('../../../../../use.fontawesome.com/releases/v5.7.2/css/all.css')}}" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" crossorigin="anonymous">		
+		<link href="{{asset('css/flaticon.css')}}" rel="stylesheet">
 
 		<!-- PLUGINS STYLESHEET -->
-		<link href="css/menu.css" rel="stylesheet">	
-		<link id="effect" href="css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
-		<link href="css/tweenmax.css" rel="stylesheet">	
-		<link href="css/magnific-popup.css" rel="stylesheet">	
-		<link href="css/owl.carousel.min.css" rel="stylesheet">
-		<link href="css/owl.theme.default.min.css" rel="stylesheet">
+		<link href="{{asset('css/menu.css')}}" rel="stylesheet">	
+		<link id="effect" href="{{asset('css/dropdown-effects/fade-down.css')}}" media="all" rel="stylesheet">
+		<link href="{{asset('css/tweenmax.css')}}" rel="stylesheet">	
+		<link href="{{asset('css/magnific-popup.css')}}" rel="stylesheet">	
+		<link href="{{asset('css/owl.carousel.min.css')}}" rel="stylesheet">
+		<link href="{{asset('css/owl.theme.default.min.css')}}" rel="stylesheet">
 	
 		<!-- TEMPLATE CSS -->
-		<link href="css/red.css" rel="stylesheet">
+		<link href="{{asset('css/red.css')}}" rel="stylesheet">
 
 		<!-- STYLE SWITCHER CSS -->	
-		<link href="css/aqua.css" rel="alternate stylesheet" title="aqua-theme"> 
-		<link href="css/blue.css" rel="alternate stylesheet" title="blue-theme"> 
-		<link href="css/salmon.css" rel="alternate stylesheet" title="salmon-theme"> 
-		<link href="css/green.css" rel="alternate stylesheet" title="green-theme"> 	
-		<link href="css/olive.css" rel="alternate stylesheet" title="olive-theme"> 
-		<link href="css/orange.css" rel="alternate stylesheet" title="orange-theme"> 
-		<link href="css/darkred.css" rel="alternate stylesheet" title="darkred-theme"> 
-		<link href="css/teal.css" rel="alternate stylesheet" title="teal-theme"> 
-		<link href="css/yellow.css" rel="alternate stylesheet" title="yellow-theme"> 
+		<link href="{{asset('css/aqua.css')}}" rel="alternate stylesheet" title="aqua-theme"> 
+		<link href="{{asset('css/blue.css')}}" rel="alternate stylesheet" title="blue-theme"> 
+		<link href="{{asset('css/salmon.css')}}" rel="alternate stylesheet" title="salmon-theme"> 
+		<link href="{{asset('css/green.css')}}" rel="alternate stylesheet" title="green-theme"> 	
+		<link href="{{asset('css/olive.css')}}" rel="alternate stylesheet" title="olive-theme"> 
+		<link href="{{asset('css/orange.css')}}" rel="alternate stylesheet" title="orange-theme"> 
+		<link href="{{asset('css/darkred.css')}}" rel="alternate stylesheet" title="darkred-theme"> 
+		<link href="{{asset('css/teal.css')}}" rel="alternate stylesheet" title="teal-theme"> 
+		<link href="{{asset('css/yellow.css')}}" rel="alternate stylesheet" title="yellow-theme"> 
 		
 		<!-- RESPONSIVE CSS -->
-		<link href="css/responsive.css" rel="stylesheet"> 
+		<link href="{{asset('css/responsive.css')}}" rel="stylesheet"> 
 	
 
 		
@@ -102,7 +98,7 @@
 					<!-- MOBILE HEADER -->
 				    <div class="wsmobileheader clearfix">	
 				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	    	
-				    	<span class="smllogo"><img src="images/logo.png" width="120" height="50" alt="mobile-logo"></span>
+				    	<span class="smllogo"><img src="{{asset('images/logo.png')}}" width="120" height="50" alt="mobile-logo"></span>
 				    	<a href="tel:123456789" class="callusbtn"><i class="fas fa-phone"></i></a>
 				 	</div>
 
@@ -136,21 +132,29 @@
 
 	    					<!-- LOGO IMAGE -->
 	    					<!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 90 pixels) -->
-	    					<div class="desktoplogo"><a href="#hero-1" class="logo-black"><img src="images/logo.png" width="180" height="80" alt="header-logo"></a></div>
-	    					<div class="desktoplogo"><a href="#hero-1" class="logo-white"><img src="images/logo.png" width="180" height="80" alt="header-logo"></a></div>
+	    					<div class="desktoplogo"><a href="#hero-1" class="logo-black"><img src="{{asset('images/logo.png')}}" width="180" height="80" alt="header-logo"></a></div>
+	    					<div class="desktoplogo"><a href="#hero-1" class="logo-white"><img src="{{asset('images/logo.png')}}" width="180" height="80" alt="header-logo"></a></div>
 
 
 	    					<!-- MAIN MENU -->
 	      					<nav class="wsmenu clearfix blue-header">
 	        					<ul class="wsmenu-list">
 
-
+									@php
+									// Fetch courses from the database using Eloquent query or any other method
+									$courses = \App\Models\Course::all(); // Replace \App\Models\Course with your actual Course model namespace
+								@endphp
 	        						<!-- DROPDOWN MENU -->
 						        	<li class="nl-simple" aria-haspopup="true"><a href="{{ route('home')}}">Home</a></li>
 						        	<li class="nl-simple" aria-haspopup="true"><a href="{{ route('about')}}">About us</a></li>
 						        	<li aria-haspopup="true"><a href="#">Courses<span class="wsarrow"></span></a>
 										<ul class="sub-menu">
-											<li aria-haspopup="true"><a href="courses-list.html">Courses</a></li>
+											<li aria-haspopup="true"><a href="{{route('course')}}">All Courses</a></li>
+											@foreach ($courses as $course)
+            <li aria-haspopup="true">
+                <a href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
+            </li>
+        @endforeach
 										   <li aria-haspopup="true"><a href="batch-list.html">Batches</a></li>
 										   
 										  
@@ -318,7 +322,7 @@
 								<div class="col-md-4 col-lg-3">
 									<!-- Footer Logo -->
 									<!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 420 x 100 pixels) -->
-									<img src="images/logo.png" width="180" height="80" alt="footer-logo">
+									<img src="{{asset('images/logo.png')}}" width="180" height="80" alt="footer-logo">
 									
 								</div>
 	
@@ -349,29 +353,29 @@
 
 		<!-- EXTERNAL SCRIPTS
 		============================================= -->	
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>	
-		<script src="js/modernizr.custom.js"></script>
-		<script src="js/jquery.easing.js"></script>
-		<script src="js/jquery.appear.js"></script>
-		<script src="js/jquery.stellar.min.js"></script>	
-		<script src="js/menu.js"></script>
-		<script src="js/materialize.js"></script>	
-		<script src="js/jquery.scrollto.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/isotope.pkgd.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>	
-		<script src="js/hero-request-form.js"></script>
-		<script src="js/hero-register-form.js"></script>
-		<script src="js/request-form.js"></script>	
-		<script src="js/contact-form.js"></script>
-		<script src="js/comment-form.js"></script>
-		<script src="js/jquery.ajaxchimp.min.js"></script>	
-		<script src="js/jquery.validate.min.js"></script>	
+		<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+		<script src="{{asset('js/bootstrap.min.js')}}"></script>	
+		<script src="{{asset('js/modernizr.custom.js')}}"></script>
+		<script src="{{asset('js/jquery.easing.js')}}"></script>
+		<script src="{{asset('js/jquery.appear.js')}}"></script>
+		<script src="{{asset('js/jquery.stellar.min.js')}}"></script>	
+		<script src="{{asset('js/menu.js')}}"></script>
+		<script src="{{asset('js/materialize.js')}}"></script>	
+		<script src="{{asset('js/jquery.scrollto.js')}}"></script>
+		<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
+		<script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+		<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>	
+		<script src="{{asset('js/hero-request-form.js')}}"></script>
+		<script src="{{asset('js/hero-register-form.js')}}"></script>
+		<script src="{{asset('js/request-form.js')}}"></script>	
+		<script src="{{asset('js/contact-form.js')}}"></script>
+		<script src="{{asset('js/comment-form.js')}}"></script>
+		<script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>	
+		<script src="{{asset('js/jquery.validate.min.js')}}"></script>	
 
 		<!-- Custom Script -->		
-		<script src="js/custom.js"></script>
+		<script src="{{asset('js/custom.js')}}"></script>
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 		<!-- [if lt IE 9]>
@@ -402,15 +406,15 @@
                 	<div class="stBlock text-center" style="margin: 30px 20px 20px 16px;">
 						<p>Color Scheme</p>						
 						<div class="stBgs">	
-							<a href="javascript:chooseStyle('aqua-theme', 60)"><img src="images/color-scheme/aqua.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('salmon-theme', 60)"><img src="images/color-scheme/salmon.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('blue-theme', 60)"><img src="images/color-scheme/blue.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('red-theme', 60)"><img src="images/color-scheme/red.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('olive-theme', 60)"><img src="images/color-scheme/olive.png" width="50" height="50" alt="" /></a>			
-							<a href="javascript:chooseStyle('darkred-theme', 60)"><img src="images/color-scheme/darkred.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('teal-theme', 60)"><img src="images/color-scheme/teal.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('yellow-theme', 60)"><img src="images/color-scheme/yellow.png" width="50" height="50" alt="" /></a>	
-							<a href="javascript:chooseStyle('green-theme', 60)"><img src="images/color-scheme/green.png" width="50" height="50" alt="" /></a>																
+							<a href="javascript:chooseStyle('aqua-theme', 60)"><img src="{{asset('images/color-scheme/aqua.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('salmon-theme', 60)"><img src="{{asset('images/color-scheme/salmon.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('blue-theme', 60)"><img src="{{asset('images/color-scheme/blue.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('red-theme', 60)"><img src="{{asset('images/color-scheme/red.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('olive-theme', 60)"><img src="{{asset('images/color-scheme/olive.png')}}" width="50" height="50" alt="" /></a>			
+							<a href="javascript:chooseStyle('darkred-theme', 60)"><img src="{{asset('images/color-scheme/darkred.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('teal-theme', 60)"><img src="{{asset('images/color-scheme/teal.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('yellow-theme', 60)"><img src="{{asset('images/color-scheme/yellow.png')}}" width="50" height="50" alt="" /></a>	
+							<a href="javascript:chooseStyle('green-theme', 60)"><img src="{{asset('images/color-scheme/green.png')}}" width="50" height="50" alt="" /></a>																
 						</div>
 					</div>
 					
@@ -425,8 +429,8 @@
 		  <!-- END SWITCHER -->
 
 
-		<script src="js/changer.js"></script>
-		<script defer src="js/styleswitch.js"></script>	
+		<script src="{{asset('js/changer.js')}}"></script>
+		<script defer src="{{asset('js/styleswitch.js')}}"></script>	
 
 
 

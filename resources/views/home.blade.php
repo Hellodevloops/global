@@ -753,7 +753,8 @@
 
     <!-- ABOUT-6
        ============================================= -->
-    <section id="about-6" class="bg-scroll pt-100 about-section division">
+     
+	   <section id="about-6" class="bg-scroll pt-100 about-section division">
         <div class="container white-color">
             <div class="row d-flex align-items-center">
 
@@ -761,7 +762,7 @@
                 <!-- ABOUT IMAGE -->
                 <div class="col-lg-6">
                     <div class="about-6-img text-center">
-                        <img class="img-fluid" src="images/image-08.png" alt="about-image" />
+                        <img class="img-fluid" src="{{asset('images/image-08.png')}}" alt="about-image" />
                     </div>
                 </div>
 
@@ -782,15 +783,15 @@
                         <h5 class="h5-lg">4000+ Universities across 28 Countries:</h5>
                         <!-- Flags List -->
                         <ul class="flags-list">
-                            <li><a href="country-details.html"><img src="images/flags/canada.png"
+                            <li><a href="country-details.html"><img src="{{asset('images/flags/canada.png')}}"
                                         alt="flag" /><span>Canada</span></a></li>
-                            <li><a href="country-details.html"><img src="images/flags/australia.png"
+                            <li><a href="country-details.html"><img src="{{asset('images/flags/australia.png')}}"
                                         alt="flag" /><span>Australia</span></a></li>
-                            <li><a href="country-details.html"><img src="images/flags/usa.png"
+                            <li><a href="country-details.html"><img src="{{asset('images/flags/usa.png')}}"
                                         alt="flag" /><span>USA</span></a></li>
-                            <li><a href="country-details.html"><img src="images/flags/united-kingdom.png"
+                            <li><a href="country-details.html"><img src="{{asset('images/flags/united-kingdom.png')}}"
                                         alt="flag" /><span>UK</span></a></li>
-                            <li><a href="country-details.html"><img src="images/flags/eu.png"
+                            <li><a href="country-details.html"><img src="{{asset('images/flags/eu.png')}}"
                                         alt="flag" /><span>Europe</span></a></li>
                         </ul>
                     </div>
@@ -802,6 +803,7 @@
             </div> <!-- End row -->
         </div> <!-- End container -->
     </section> <!-- END ABOUT-6 -->
+
 
 
 

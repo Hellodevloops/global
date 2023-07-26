@@ -40,6 +40,14 @@ class PlatformProvider extends OrchidServiceProvider
                 // ->route('platform.ContactScreen')
                 ->title('Manage'),
                 // ->badge(fn () => 6),
+            Menu::make('Courses')
+                ->icon('book-open')
+                ->route('platform.course.list'),
+                // ->badge(fn () => 6),
+            Menu::make('Batches')
+                ->icon('friends')
+                ->route('platform.post.list'),
+                // ->badge(fn () => 6),
 
            
 
