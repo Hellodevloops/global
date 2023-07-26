@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 /*
 /*
@@ -93,3 +94,7 @@ Route::resource('contact', ContactController::class);
 // Route for listing all posts
 Route::get('/blog', [PostController::class, 'index'])->name('blog');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
+
+Route::get('/course', [CourseController::class, 'index'])->name('course');
+Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
