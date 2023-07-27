@@ -24,6 +24,8 @@ use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
 use App\Orchid\Screens\CourseEditScreen;
 use App\Orchid\Screens\CourseListScreen;
+use App\Orchid\Screens\BatchEditScreen;
+use App\Orchid\Screens\BatchListScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -123,3 +125,9 @@ Route::screen('posts', PostListScreen::class)
 
 Route::screen('courses', CourseListScreen::class)
     ->name('platform.course.list');
+
+    Route::screen('batch/{post?}', BatchEditScreen::class)
+    ->name('platform.batch.edit');
+
+Route::screen('batchs', BatchListScreen::class)
+    ->name('platform.batch.list');

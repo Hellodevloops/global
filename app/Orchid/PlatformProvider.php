@@ -46,7 +46,7 @@ class PlatformProvider extends OrchidServiceProvider
                 // ->badge(fn () => 6),
             Menu::make('Batches')
                 ->icon('friends')
-                ->route('platform.post.list'),
+                ->route('platform.batch.list'),
                 // ->badge(fn () => 6),
 
            

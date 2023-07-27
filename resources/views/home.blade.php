@@ -194,12 +194,14 @@
                     <div class="flex-container1">
                         <div class="slider1-container1">
                             <ul class="slider1">
+                                @foreach ($posts as $post)
+                                @if ($post->hero)
                                 <li class="slider1__slide1">
                                     <div class="slide1__content1">
                                         <div class="blog-post">
                                             <!-- BLOG POST IMAGE -->
                                             <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="images/path" alt="blog-post-image">
+                                                <img class="img-fluid" src="{{ $post->hero }}" alt="blog-post-image">
                                             </div>
                                             <!-- BLOG POST TEXT -->
                                             <div class="blog-post-txt">
@@ -207,154 +209,19 @@
                                                     <!-- Post Meta -->
                                                     <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
                                                     <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
+                                                    <h5 class="h5-lg"><a href="#" class="black-color">{{ $post->title }}</a></h5>
                                                     <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                                    <p class="grey-color">{{ Illuminate\Support\Str::limit($post->description, $limit = 80, $end = '...') }}</p>
                                                     <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
+                                                  
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="slider1__slide1">
-                                    <div class="slide1__content1">
-                                        <div class="blog-post">
-                                            <!-- BLOG POST IMAGE -->
-                                            <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="images/path" alt="blog-post-image">
-                                            </div>
-                                            <!-- BLOG POST TEXT -->
-                                            <div class="blog-post-txt">
-                                                <a href="#">
-                                                    <!-- Post Meta -->
-                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
-                                                    <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
-                                                    <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                    <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="slider1__slide1">
-                                    <div class="slide1__content1">
-                                        <div class="blog-post">
-                                            <!-- BLOG POST IMAGE -->
-                                            <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="images/path" alt="blog-post-image">
-                                            </div>
-                                            <!-- BLOG POST TEXT -->
-                                            <div class="blog-post-txt">
-                                                <a href="#">
-                                                    <!-- Post Meta -->
-                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
-                                                    <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
-                                                    <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                    <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="slider1__slide1">
-                                    <div class="slide1__content1">
-                                        <div class="blog-post">
-                                            <!-- BLOG POST IMAGE -->
-                                            <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="images/path" alt="blog-post-image">
-                                            </div>
-                                            <!-- BLOG POST TEXT -->
-                                            <div class="blog-post-txt">
-                                                <a href="#">
-                                                    <!-- Post Meta -->
-                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
-                                                    <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
-                                                    <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                    <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="slider1__slide1">
-                                    <div class="slide1__content1">
-                                        <div class="blog-post">
-                                            <!-- BLOG POST IMAGE -->
-                                            <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="path/to/image" alt="blog-post-image">
-                                            </div>
-                                            <!-- BLOG POST TEXT -->
-                                            <div class="blog-post-txt">
-                                                <a href="#">
-                                                    <!-- Post Meta -->
-                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
-                                                    <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
-                                                    <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                    <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="slider1__slide1">
-                                    <div class="slide1__content1">
-                                        <div class="blog-post">
-                                            <!-- BLOG POST IMAGE -->
-                                            <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="path/to/image" alt="blog-post-image">
-                                            </div>
-                                            <!-- BLOG POST TEXT -->
-                                            <div class="blog-post-txt">
-                                                <a href="#">
-                                                    <!-- Post Meta -->
-                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
-                                                    <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
-                                                    <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                    <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="slider1__slide1">
-                                    <div class="slide1__content1">
-                                        <div class="blog-post">
-                                            <!-- BLOG POST IMAGE -->
-                                            <div class="blog-post-img mb-30">
-                                                <img class="img-fluid" src="./image/" alt="blog-post-image">
-                                            </div>
-                                            <!-- BLOG POST TEXT -->
-                                            <div class="blog-post-txt">
-                                                <a href="#">
-                                                    <!-- Post Meta -->
-                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
-                                                    <!-- Title -->
-                                                    <h5 class="h5-lg"><a href="#" class="primary-color">Post Title</a></h5>
-                                                    <!-- Text -->
-                                                    <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                    <!-- Post Data -->
-                                                    <p class="post-data">By <a href="#">Sean McMarthy</a> - 18 hours ago</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                @endif	
+                            @endforeach
+                            
                             </ul>
                         </div>
 

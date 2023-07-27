@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BatchController;
 /*
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +99,6 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 
 Route::get('/course', [CourseController::class, 'index'])->name('course');
 Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
+Route::get('/batch', [BatchController::class, 'index'])->name('batch');
+Route::get('/batchs/{batch}', [BatchController::class, 'show'])->name('batchs.show');

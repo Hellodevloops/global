@@ -15,7 +15,7 @@ use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
 use Orchid\Screen\Fields\Cropper;
-
+use Orchid\Screen\Fields\Select;
 class PostEditScreen extends Screen
 {
     /**
@@ -95,11 +95,20 @@ class PostEditScreen extends Screen
                     ->placeholder('Attractive but mysterious title')
                     ->help('Specify a short descriptive title for this post.'),
 
+                    Select::make('post.type')
+                    ->options([
+                        'home'   => 'On Homepage Slider',
+                        'blog' => 'On Blog Page',
+                    ])
+                    ->empty('No select')
+                    ->title('Select Area to display')
+                    ->help('Where You want to display this Image'),
+
                     Cropper::make('post.hero')
                     ->targetRelativeUrl()
                     ->title('Large web banner image, generally in the front and center')
-                    ->width(450)
-                    ->height(600),  
+                    ->width(600)
+                    ->height(400),  
     
                 TextArea::make('post.description')
                     ->title('Description')
