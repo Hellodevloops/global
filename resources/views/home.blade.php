@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <!-- HERO-2
-       ============================================= -->
+           ============================================= -->
     <section id="hero-2" class="hero-section division">
 
 
@@ -102,7 +102,7 @@
 
     </section> <!-- END HERO-2 -->
     <!-- HERO-3
-       ============================================= -->
+           ============================================= -->
     <section id="hero-3" class="bg-scroll hero-section division">
 
         <div class="container">
@@ -112,92 +112,122 @@
 
                 <div>
                     <style>
-                        @-webkit-keyframes scroll {
-                            0% {
-                                -webkit-transform: translateX(0);
-                                transform: translateX(0);
-                            }
-
-                            100% {
-                                -webkit-transform: translateX(calc(-250px * 7));
-                                transform: translateX(calc(-250px * 7));
-                            }
+                        /* Slider CSS logic */
+                        /* Slider CSS logic */
+                        .slider1 {
+                            --slider-inner-width: 1400px;
+                            --slider-speed: 10s;
                         }
 
                         @keyframes scroll {
                             0% {
-                                -webkit-transform: translateX(0);
-                                transform: translateX(0);
+                                transform: translateX(-5%);
                             }
 
                             100% {
-                                -webkit-transform: translateX(calc(-250px * 7));
-                                transform: translateX(calc(-250px * 7));
+                                transform: translateX(calc((0px - var(--slider-inner-width)) - 5%));
                             }
                         }
 
-                        .slider2 {
-                            background: pr;
-                            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-                            height: 500px;
-                            margin: -30px auto 0;
-                            padding-top: 30px;
-                            /* Add top padding */
-                            padding-bottom: 30px;
-                            /* Add bottom padding */
+                        .slider1 {
+                            -webkit-transform: translate3d(0, 0, 0);
+                            animation: scroll linear infinite var(--slider-speed);
+                            width: calc(2 * var(--slider-inner-width));
+                            transition: animation-play-state ease 0.3s;
+                        }
+
+                        .slider1:hover {
+                            animation-play-state: paused;
+                        }
+
+
+                        .flex-container1 {
+                            min-height: 100vh;
+                            /* display: flex;
+                               flex-direction: column; */
+                            /* justify-content: center; */
+                            /* align-items: center; */
+                            /* padding: 4rem 0; */
+                        }
+
+                        .slider1-container1 {
+                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                            height: 530px;
                             overflow: hidden;
                             position: relative;
-                            width: 1100px;
-                        }
-
-                        .slider2::before,
-                        .slider2::after {
-                            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%);
-                            content: "";
-                            height: 100px;
-                            position: absolute;
-                            width: 200px;
-                            z-index: 2;
-                        }
-
-                        .slider2::after {
-                            right: 0;
-                            top: 0;
-                            -webkit-transform: rotateZ(180deg);
-                            transform: rotateZ(180deg);
-                        }
-
-                        .slider2::before {
-                            left: 0;
-                            top: 0;
-                        }
-
-                        .slider2 .slide2-track {
-                            -webkit-animation: scroll 40s linear infinite;
-                            animation: scroll 40s linear infinite;
-                            display: flex;
-                            width: calc(400px * 4);
-                        }
-
-                        .slider2 .slide2 {
-                            height: 100px;
-                            width: 400px;
-                        }
-
-                        .image-container {
-                            width: 800px;
-                            height: 500px;
-                            overflow: hidden;
-                        }
-
-                        .cropped-image {
                             width: 100%;
-                            height: 100%;
-                            object-fit: cover;
+                            margin-right: 10px;
+                        }
+
+                        .slider1-container1 .slider1 {
+                            display: flex;
+                            align-items: center;
+                            list-style: none;
+                            margin: 0;
+                        }
+
+                        .slider1-container1 .slider1__slide1 {
+                            height: 530px;
+                            flex-grow: 1;
+                            /* flex-basis: 0; */
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: rgba(255, 255, 255, 0);
+                            margin-right: 30px;
+                            padding-top: 50px;
+                        }
+
+                        .slider1-container1 .slider1__slide1:hover {
+                            background: rgba(234, 234, 234, 0.568);
+                            cursor: pointer;
+                        }
+
+                        .slider1-container1 .slider1__slide1 .slide1__content1 {
+                            color: white;
+                            font-size: 80px;
+                            /* height: 250px;
+                                                        width: 250px;
+                                                        margin-right: 5px; */
                         }
                     </style>
+                    <div class="flex-container1">
+                        <div class="slider1-container1">
+                            <ul class="slider1">
+                                @foreach ($posts as $post)
+                                @if ($post->hero)
+                                <li class="slider1__slide1">
+                                    <div class="slide1__content1">
+                                        <div class="blog-post">
+                                            <!-- BLOG POST IMAGE -->
+                                            <div class="blog-post-img mb-30">
+                                                <img class="img-fluid" src="{{ $post->hero }}" alt="blog-post-image">
+                                            </div>
+                                            <!-- BLOG POST TEXT -->
+                                            <div class="blog-post-txt">
+                                                <a href="#">
+                                                    <!-- Post Meta -->
+                                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read</p>
+                                                    <!-- Title -->
+                                                    <h5 class="h5-lg"><a href="#" class="black-color">{{ $post->title }}</a></h5>
+                                                    <!-- Text -->
+                                                    <p class="grey-color">{{ Illuminate\Support\Str::limit($post->description, $limit = 80, $end = '...') }}</p>
+                                                    <!-- Post Data -->
+                                                  
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                @endif	
+                            @endforeach
+                            
+                            </ul>
+                        </div>
 
-                    <div class="slider2">
+                    </div>
+
+                    {{-- <div class="slider2">
 
                         <div class="slide2-track">
                             @foreach ($posts as $post)
@@ -227,7 +257,7 @@
 
                         </div>
 
-                    </div>
+                    </div> --}}
                     <!-- partial -->
                 </div>
 
@@ -242,7 +272,7 @@
 
 
     <!-- ABOUT-2
-       ============================================= -->
+           ============================================= -->
     <section id="about-2" class="wide-60 about-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
@@ -296,7 +326,7 @@
 
 
     <!-- COUNTRIES-2
-    ============================================= -->
+        ============================================= -->
     <section id="countries-2" class="bg-tra-map bg-lightgrey wide-40 countries-section division">
         <div class="container">
             <!-- SECTION TITLE -->
@@ -529,7 +559,7 @@
     </section>
     <!-- END COUNTRIES-2 -->
     <!-- SERVICES-4
-    ============================================= -->
+        ============================================= -->
     <section id="services-4" class="wide-70 services-section division">
         <div class="container">
             <!-- SECTION TITLE -->
@@ -665,7 +695,7 @@
     <!-- END SERVICES-4 -->
 
     <!-- STATISTIC-2
-       ============================================= -->
+           ============================================= -->
     <div id="statistic-2" class="bg-blue-map wide-60 statistic-section division">
         <div class="container">
 
@@ -752,9 +782,8 @@
 
 
     <!-- ABOUT-6
-       ============================================= -->
-     
-	   <section id="about-6" class="bg-scroll pt-100 about-section division">
+           ============================================= -->
+    <section id="about-6" class="bg-scroll pt-100 about-section division">
         <div class="container white-color">
             <div class="row d-flex align-items-center">
 
@@ -762,7 +791,7 @@
                 <!-- ABOUT IMAGE -->
                 <div class="col-lg-6">
                     <div class="about-6-img text-center">
-                        <img class="img-fluid" src="{{asset('images/image-08.png')}}" alt="about-image" />
+                        <img class="img-fluid" src="images/image-08.png" alt="about-image" />
                     </div>
                 </div>
 
@@ -783,15 +812,15 @@
                         <h5 class="h5-lg">4000+ Universities across 28 Countries:</h5>
                         <!-- Flags List -->
                         <ul class="flags-list">
-                            <li><a href="country-details.html"><img src="{{asset('images/flags/canada.png')}}"
+                            <li><a href="country-details.html"><img src="images/flags/canada.png"
                                         alt="flag" /><span>Canada</span></a></li>
-                            <li><a href="country-details.html"><img src="{{asset('images/flags/australia.png')}}"
+                            <li><a href="country-details.html"><img src="images/flags/australia.png"
                                         alt="flag" /><span>Australia</span></a></li>
-                            <li><a href="country-details.html"><img src="{{asset('images/flags/usa.png')}}"
+                            <li><a href="country-details.html"><img src="images/flags/usa.png"
                                         alt="flag" /><span>USA</span></a></li>
-                            <li><a href="country-details.html"><img src="{{asset('images/flags/united-kingdom.png')}}"
+                            <li><a href="country-details.html"><img src="images/flags/united-kingdom.png"
                                         alt="flag" /><span>UK</span></a></li>
-                            <li><a href="country-details.html"><img src="{{asset('images/flags/eu.png')}}"
+                            <li><a href="country-details.html"><img src="images/flags/eu.png"
                                         alt="flag" /><span>Europe</span></a></li>
                         </ul>
                     </div>
@@ -810,9 +839,8 @@
 
 
 
-
     <!-- BLOG-1
-       ============================================= -->
+           ============================================= -->
     <section id="blog-1" class="wide-60 blog-section division">
         <div class="container">
 
@@ -835,151 +863,152 @@
             <div class="row">
 
 
-				@foreach ($posts as $key => $post)
-				@if ($key < 3)
-				<div class="col-md-6 col-lg-4">
-					<div class="blog-post">
+                @foreach ($posts as $key => $post)
+                    @if ($key < 3)
+                        <div class="col-md-6 col-lg-4">
+                            <div class="blog-post">
 
 
-						<!-- BLOG POST IMAGE -->
-						@if ($post->hero)
-							<div class="blog-post-img mb-30">
-								<img class="img-fluid" src="{{ $post->hero }}" alt="blog-post-image" />
-							</div>
-						@endif
+                                <!-- BLOG POST IMAGE -->
+                                @if ($post->hero)
+                                    <div class="blog-post-img mb-30">
+                                        <img class="img-fluid" src="{{ $post->hero }}" alt="blog-post-image" />
+                                    </div>
+                                @endif
 
-						<!-- BLOG POST TEXT -->
-						<div class="blog-post-txt">
+                                <!-- BLOG POST TEXT -->
+                                <div class="blog-post-txt">
 
-							<!-- Post Meta -->
-							<p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read
-							</p>
+                                    <!-- Post Meta -->
+                                    <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12
+                                        min read
+                                    </p>
 
-							<!-- Title -->
-							<h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">
-									<a href="{{ route('posts.show', ['post' => $post]) }}">{{ $post->title }}</a>
-							</h5>
+                                    <!-- Title -->
+                                    <h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">
+                                            <a href="{{ route('posts.show', ['post' => $post]) }}">{{ $post->title }}</a>
+                                    </h5>
 
-							<!-- Text -->
-							<p> {{ Illuminate\Support\Str::limit($post->description, $limit = 120, $end = '...') }}
-							</p>
+                                    <!-- Text -->
+                                    <p> {{ Illuminate\Support\Str::limit($post->description, $limit = 120, $end = '...') }}
+                                    </p>
 
-							<!-- Post Data -->
-							<p class="post-data">By <a href="#">{{ $post->author_name->name }}</a> -
-								{{ $post->created_at->format('F d, Y') }}</p>
+                                    <!-- Post Data -->
+                                    <p class="post-data">By <a href="#">{{ $post->author_name->name }}</a> -
+                                        {{ $post->created_at->format('F d, Y') }}</p>
 
-						</div>
-
-
-					</div>
-				</div>
-				@else
-				@break
-			@endif
-		@endforeach
-
-             
-
-            </div> <!-- END BLOG POSTS HOLDER -->
+                                </div>
 
 
-        </div> <!-- End container -->
-    </section> <!-- END BLOG-1 -->
+                            </div>
+                        </div>
+                    @else
+                    @break
+                @endif
+            @endforeach
 
 
 
+        </div> <!-- END BLOG POSTS HOLDER -->
 
-    <!-- REQUEST FORM
+
+    </div> <!-- End container -->
+</section> <!-- END BLOG-1 -->
+
+
+
+
+<!-- REQUEST FORM
        ============================================= -->
-    <div id="request-1" class="bg-image wide-60 request-form-section division">
-        <div class="container">
-            <div class="row d-flex align-items-center">
+<div id="request-1" class="bg-image wide-60 request-form-section division">
+    <div class="container">
+        <div class="row d-flex align-items-center">
 
 
-                <!-- REQUEST FORM TEXT -->
-                <div class="col-md-6 col-xl-6">
-                    <div class="request-txt white-color pc-20 mb-40">
-                        <!-- Section ID -->
-                        <span class="section-id id-color">Free 24/7 Support</span>
-                        <!-- Title -->
-                        <h2 class="h2-xs">Get Free & Quality Online Consultation</h2>
-                        <!-- Small Title -->
-                        <h5 class="h5-md">Experience Expert Guidance Anytime</h5>
-                        <!-- Text -->
-                        <p>Our team is available 24/7 to provide you with free and high-quality online consultation
-                            services. Whether you have questions about the immigration process or need guidance on visa
-                            applications, we are here to help. Our experienced professionals will assist you every step of
-                            the way, ensuring a smooth and successful journey towards your immigration goals.</p>
-                    </div>
+            <!-- REQUEST FORM TEXT -->
+            <div class="col-md-6 col-xl-6">
+                <div class="request-txt white-color pc-20 mb-40">
+                    <!-- Section ID -->
+                    <span class="section-id id-color">Free 24/7 Support</span>
+                    <!-- Title -->
+                    <h2 class="h2-xs">Get Free & Quality Online Consultation</h2>
+                    <!-- Small Title -->
+                    <h5 class="h5-md">Experience Expert Guidance Anytime</h5>
+                    <!-- Text -->
+                    <p>Our team is available 24/7 to provide you with free and high-quality online consultation
+                        services. Whether you have questions about the immigration process or need guidance on visa
+                        applications, we are here to help. Our experienced professionals will assist you every step of
+                        the way, ensuring a smooth and successful journey towards your immigration goals.</p>
                 </div>
-                <!-- END REQUEST FORM TEXT -->
+            </div>
+            <!-- END REQUEST FORM TEXT -->
 
 
 
-                <!-- REQUEST FORM -->
-                <div class="col-md-6 col-xl-5 offset-xl-1">
-                    <div id="request-form" class="text-center mb-40">
-                        <form name="requestForm" class="row request-form bg-lightgrey">
+            <!-- REQUEST FORM -->
+            <div class="col-md-6 col-xl-5 offset-xl-1">
+                <div id="request-form" class="text-center mb-40">
+                    <form name="requestForm" class="row request-form bg-lightgrey">
 
-                            <!-- Request Form Text -->
-                            <div class="col-md-12">
-                                <h5 class="h5-lg">Request Free Consultation</h5>
-                            </div>
+                        <!-- Request Form Text -->
+                        <div class="col-md-12">
+                            <h5 class="h5-lg">Request Free Consultation</h5>
+                        </div>
 
-                            <!-- Request Form Input -->
-                            <div id="input-name" class="col-md-12">
-                                <input type="text" name="name" class="form-control name"
-                                    placeholder="Enter Your Name*" required>
-                            </div>
+                        <!-- Request Form Input -->
+                        <div id="input-name" class="col-md-12">
+                            <input type="text" name="name" class="form-control name"
+                                placeholder="Enter Your Name*" required>
+                        </div>
 
-                            <!-- Request Form Input -->
-                            <div id="input-email" class="col-md-12">
-                                <input type="text" name="email" class="form-control email"
-                                    placeholder="Enter Your Email*" required>
-                            </div>
+                        <!-- Request Form Input -->
+                        <div id="input-email" class="col-md-12">
+                            <input type="text" name="email" class="form-control email"
+                                placeholder="Enter Your Email*" required>
+                        </div>
 
-                            <!-- Request Form Input -->
-                            <div id="input-phone" class="col-md-12">
-                                <input type="tel" name="phone" class="form-control phone"
-                                    placeholder="Enter Your Phone Number*" required>
-                            </div>
+                        <!-- Request Form Input -->
+                        <div id="input-phone" class="col-md-12">
+                            <input type="tel" name="phone" class="form-control phone"
+                                placeholder="Enter Your Phone Number*" required>
+                        </div>
 
-                            <!-- Request Form Select -->
-
-
-                            <!-- Request Form Select -->
-                            <div id="input-country" class="col-md-12 input-country">
-                                <select id="inlineFormCustomSelect2" name="country" class="custom-select country"
-                                    required>
-                                    <option value="">Visa for</option>
-                                    <option>USA</option>
-                                    <option>Canada</option>
-                                    <option>Australia</option>
-                                    <option>New Zealand</option>
-                                    <option>United Kingdom</option>
-                                    <option>Ireland</option>
-                                    <option>Europe</option>
-                                    <option>Asia</option>
-                                </select>
-                            </div>
-
-                            <!-- Request Form Button -->
-                            <div class="col-md-12 form-btn">
-                                <button type="submit" class="btn btn-primary tra-black-hover submit">Send
-                                    Request</button>
-                            </div>
-
-                            <!-- Request Form Message -->
-                            <div class="col-md-12 request-form-msg text-center">
-                                <div class="sending-msg"><span class="loading"></span></div>
-                            </div>
-
-                        </form>
-                    </div>
-                </div> <!-- END REQUEST FORM -->
+                        <!-- Request Form Select -->
 
 
-            </div> <!-- End row -->
-        </div> <!-- End container -->
-    </div> <!-- END REQUEST FORM -->
+                        <!-- Request Form Select -->
+                        <div id="input-country" class="col-md-12 input-country">
+                            <select id="inlineFormCustomSelect2" name="country" class="custom-select country"
+                                required>
+                                <option value="">Visa for</option>
+                                <option>USA</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>New Zealand</option>
+                                <option>United Kingdom</option>
+                                <option>Ireland</option>
+                                <option>Europe</option>
+                                <option>Asia</option>
+                            </select>
+                        </div>
+
+                        <!-- Request Form Button -->
+                        <div class="col-md-12 form-btn">
+                            <button type="submit" class="btn btn-primary tra-black-hover submit">Send
+                                Request</button>
+                        </div>
+
+                        <!-- Request Form Message -->
+                        <div class="col-md-12 request-form-msg text-center">
+                            <div class="sending-msg"><span class="loading"></span></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div> <!-- END REQUEST FORM -->
+
+
+        </div> <!-- End row -->
+    </div> <!-- End container -->
+</div> <!-- END REQUEST FORM -->
 @endsection
