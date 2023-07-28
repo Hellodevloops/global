@@ -161,8 +161,8 @@
 										</ul>
 								   </li>
 
-
-									<li aria-haspopup="true"><a href="#">Study At <span class="wsarrow"></span></a>
+								
+									{{-- <li aria-haspopup="true"><a href="#">Study At <span class="wsarrow"></span></a>
 										<ul class="sub-menu">
 											<li aria-haspopup="true"><a href="country-details.html">United states</a></li>
 											<li aria-haspopup="true"><a href="country-details.html">Canada</a></li>
@@ -174,12 +174,13 @@
 										   <li aria-haspopup="true"><a href="country-details.html">Asia</a></li>
 										  
 										</ul>
-								   </li>	<!-- END DROPDOWN MENU -->
+								   </li> --}}
+								   	<!-- END DROPDOWN MENU -->
 
 								   <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog')}}">Our Stories</a></li>
 						          	<!-- MEGAMENU -->
 						          
-
+									  <li class="nl-simple" aria-haspopup="true"><a href="{{ route('contact.index')}}">Contact us</a></li>
 
 						          	<!-- SIMPLE NAVIGATION LINK -->
 								    <li class="nl-simple" aria-haspopup="true"><a href="#"></a></li>
