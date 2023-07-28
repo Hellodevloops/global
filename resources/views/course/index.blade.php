@@ -62,14 +62,46 @@
 
 
 
-			
+						
 
 
 						</div>	  <!-- End row -->
 					</div>     <!-- End container -->
 				</section>	<!-- END SERVICES-7 -->
 
-
+				<div class="blog-page-pagination">
+					<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center primary-pagination">
+							<li class="page-item {{ $courses->currentPage() == 1 ? 'disabled' : '' }}">
+								@if ($courses->previousPageUrl())
+									<a class="page-link" href="{{ $courses->previousPageUrl() }}" tabindex="-1">
+										<i class="fas fa-long-arrow-alt-left"></i>
+									</a>
+								@else
+									<span class="page-link" tabindex="-1"><i class="fas fa-long-arrow-alt-left"></i></span>
+								@endif
+							</li>
+							@for ($page = 1; $page <= $courses->lastPage(); $page++)
+								<li class="page-item {{ $page == $courses->currentPage() ? 'active' : '' }}">
+									<a class="page-link" href="{{ $courses->url($page) }}">{{ $page }}
+										@if ($page == $courses->currentPage())
+											<span class="sr-only">(current)</span>
+										@endif
+									</a>
+								</li>
+							@endfor
+							<li class="page-item next-page {{ $courses->currentPage() == $courses->lastPage() ? 'disabled' : '' }}">
+								@if ($courses->nextPageUrl())
+									<a class="page-link" href="{{ $courses->nextPageUrl() }}">
+										<i class="fas fa-long-arrow-alt-right"></i>
+									</a>
+								@else
+									<span class="page-link"><i class="fas fa-long-arrow-alt-right"></i></span>
+								@endif
+							</li>
+						</ul>
+					</nav>
+				</div>
 
 
 				<!-- SERVICES-9
