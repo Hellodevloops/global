@@ -155,7 +155,7 @@
                 <a href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
             </li>
         @endforeach
-										   <li aria-haspopup="true"><a href="batch-list.html">Batches</a></li>
+										   <li aria-haspopup="true"><a href="{{route('batch')}}">Batches</a></li>
 										   
 										  
 										</ul>
