@@ -26,6 +26,8 @@ use App\Orchid\Screens\CourseEditScreen;
 use App\Orchid\Screens\CourseListScreen;
 use App\Orchid\Screens\BatchEditScreen;
 use App\Orchid\Screens\BatchListScreen;
+use App\Orchid\Screens\CountryEditScreen;
+use App\Orchid\Screens\CountryListScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -131,3 +133,9 @@ Route::screen('courses', CourseListScreen::class)
 
 Route::screen('batchs', BatchListScreen::class)
     ->name('platform.batch.list');
+
+    Route::screen('country/{country?}', CountryEditScreen::class)
+    ->name('platform.country.edit');
+
+Route::screen('countries', CountryListScreen::class)
+    ->name('platform.country.list');

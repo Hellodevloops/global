@@ -49,7 +49,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.batch.list'),
                 // ->badge(fn () => 6),
 
-           
+           // Add a new menu item for managing countries
+        //    Menu::make('Countries')
+        //    ->icon('globe')
+        //    ->route('platform.country.list') // Assuming you have the 'CountryListScreen' registered with this route
+        //    ->title('Manage Countries'),
 
             Menu::make(__('Users'))
                 ->icon('user')

@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BatchController;
+use App\Http\Controllers\CountryController;
 /*
 /*
 |--------------------------------------------------------------------------
@@ -102,3 +103,9 @@ Route::get('/courses/{course}', [CourseController::class, 'show'])->name('course
 
 Route::get('/batch', [BatchController::class, 'index'])->name('batch');
 Route::get('/batchs/{batch}', [BatchController::class, 'show'])->name('batchs.show');
+
+// Route for listing all countries
+Route::get('/countries', [CountryController::class, 'index'])->name('countries.index');
+
+// Route for showing a specific country
+Route::get('/countries/{country}', [CountryController::class, 'show'])->name('countries.show');

@@ -180,7 +180,7 @@
 
 				<!-- GOOGLE MAP
 				============================================= -->
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.003462146276!2d73.758336!3d20.0083694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb9bb8c3a9bb%3A0x1609378e82a8e04d!2sGLOBAL%20STUDY%20ABROAD!5e0!3m2!1sen!2sin!4v1688500573741!5m2!1sen!2sin" width="1600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				{{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.003462146276!2d73.758336!3d20.0083694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb9bb8c3a9bb%3A0x1609378e82a8e04d!2sGLOBAL%20STUDY%20ABROAD!5e0!3m2!1sen!2sin!4v1688500573741!5m2!1sen!2sin" width="1600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
 
 
 

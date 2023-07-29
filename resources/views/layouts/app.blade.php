@@ -250,12 +250,13 @@
 	
 									<!-- Footer Links -->
 									<ul class="foo-links clearfix">
-										<li><a href="about.html">About Global Consltancy</a></li>
-										<li><a href="contact.html">Visa Information</a></li>
-										<li><a href="#request-1">Immigration FAQ</a></li>
-										<li><a href="contact.html">Immigration Assistance</a></li>	
-										<li><a href="#testimonials">Global Consltancy Testimonials</a></li>
-										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="{{route('home')}}">Home</a></li>
+										<li><a href="{{route('about')}}">About Global Consltancy</a></li>
+									
+										<li><a href="{{route('blog')}}">Our Stories</a></li>
+										<li><a href="{{asset('institute.pdf')}}">institute Partners</a></li>	
+										
+										<li><a href="{{route('contact.index')}}">Contact Us</a></li>
 															
 									</ul>
 	
@@ -268,18 +269,24 @@
 								<div class="footer-links mb-40">
 								
 									<!-- Title -->
-									<h5 class="h5-md">Visa Countrys</h5>
+									<h5 class="h5-md">Our Courses</h5>
 	
 									<!-- Footer Links -->
 									<ul class="foo-links clearfix">
-										<li><a href="country-details.html">United states</a></li>
-										<li><a href="country-details.html">Canada</a></li>						
-										<li><a href="country-details.html">United kingdom</a></li>						
-										<li><a href="country-details.html">Ireland</a></li>						
-										<li><a href="country-details.html">Australia</a></li>						
-										<li><a href="country-details.html">New zealand</a></li>						
-										<li><a href="country-details.html">Europe</a></li>						
-										<li><a href="country-details.html">Asia</a></li>						
+
+										
+										@php $counter = 0; @endphp
+
+									@foreach ($courses as $course)
+										@if ($counter >= 7)
+											@break
+										@endif
+
+										<li><a href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a></li>
+										
+										@php $counter++; @endphp
+									@endforeach
+															
 									</ul>
 								</div>
 							</div>	
@@ -287,28 +294,26 @@
 	
 							<!-- FOOTER NEWSLETTER FORM -->
 							<div class="col-lg-3 col-xl-3">
-								<div class="footer-form mb-20">
+								<div class="footer-links mb-40">
 	
 									<!-- Title -->
-									<h5 class="h5-md">Stay Always In Touch</h5>
+									<h5 class="h5-md">Important Links </h5>
 	
-									<!-- Newsletter Form Input -->
-									<form class="newsletter-form">	
+									<!-- Footer Links -->
+									<ul class="foo-links clearfix">
+										<li><a href="{{route('batch')}}">All batches</a></li>
+										<li><a href="{{route('course')}}">All Courses</a></li>
+										<li><a href="{{route('blog')}}">All Updates</a></li>
+									
+										
+															
+									</ul>
 	
-										<div class="input-group">
-											<input type="email" class="form-control" placeholder="Your email address" required id="s-email">			
-											<span class="input-group-btn">
-												<button type="submit" class="btn btn-primary tra-black-hover">Subscribe</button> 
-											</span>
-										</div>
-	
-										<!-- Newsletter Form Notification -->		
-										<label for="s-email" class="form-notification"></label>
-													
-									</form>
 															
 								</div>
+								
 							</div>
+							
 	
 	
 						</div>	<!-- END FOOTER CONTENT -->
