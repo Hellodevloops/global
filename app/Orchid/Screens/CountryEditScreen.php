@@ -95,7 +95,7 @@ class CountryEditScreen extends Screen
                     ->help('Specify the title for this country.'),
 
                 
-                    Cropper::make('post.hero')
+                    Cropper::make('country.hero')
                     ->targetRelativeUrl()
                     ->title('Large web banner image, generally in the front and center')
                     ->width(600)
@@ -107,7 +107,7 @@ class CountryEditScreen extends Screen
                     ->maxlength(200)
                     ->placeholder('Brief description for the country.'),
 
-                    Relation::make('post.author')
+                    Relation::make('country.author')
                     ->title('Author')
                     ->required()
                     ->fromModel(User::class, 'name'),
