@@ -28,6 +28,8 @@ use App\Orchid\Screens\BatchEditScreen;
 use App\Orchid\Screens\BatchListScreen;
 use App\Orchid\Screens\CountryEditScreen;
 use App\Orchid\Screens\CountryListScreen;
+use App\Orchid\Screens\ServiceEditScreen; // Import the ServiceEditScreen
+use App\Orchid\Screens\ServiceListScreen; // Import the ServiceListScreen
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -139,3 +141,9 @@ Route::screen('batchs', BatchListScreen::class)
 
 Route::screen('countries', CountryListScreen::class)
     ->name('platform.country.list');
+
+    Route::screen('service/{service?}', ServiceEditScreen::class) // Update to use ServiceEditScreen
+    ->name('platform.service.edit'); // Update the route name
+
+Route::screen('services', ServiceListScreen::class) // Update to use ServiceListScreen
+    ->name('platform.service.list'); // Update the route name
