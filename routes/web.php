@@ -7,6 +7,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ServiceController; // Import the ServiceController
+
 /*
 /*
 |--------------------------------------------------------------------------
@@ -109,3 +111,9 @@ Route::get('/countries', [CountryController::class, 'index'])->name('countries.i
 
 // Route for showing a specific country
 Route::get('/countries/{country}', [CountryController::class, 'show'])->name('countries.show');
+
+
+
+// Routes for services
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
+Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service.show');

@@ -48,6 +48,9 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('friends')
                 ->route('platform.batch.list'),
                 // ->badge(fn () => 6),
+                Menu::make('Services')
+                ->icon('wrench')
+                ->route('platform.service.list'),
 
            // Add a new menu item for managing countries
         //    Menu::make('Countries')
