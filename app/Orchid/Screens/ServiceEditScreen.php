@@ -14,6 +14,8 @@ use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
+use Orchid\Screen\Fields\Cropper;
+use Orchid\Screen\Fields\Select;
 
 class ServiceEditScreen extends Screen
 {
@@ -31,8 +33,11 @@ class ServiceEditScreen extends Screen
      */
     public function query(Service $service): array
     {
+        $service->load('attachment');
         return [
+          
             'service' => $service
+
         ];
     }
 
@@ -91,6 +96,11 @@ class ServiceEditScreen extends Screen
                     ->placeholder('Attractive but mysterious title')
                     ->help('Specify a short descriptive title for this service.'),
 
+                    Cropper::make('service.hero')
+                    ->targetId()
+                    ->title('Large web banner image, generally in the front and center')
+                    ->width(1000)
+                    ->height(500),
                 TextArea::make('service.description')
                     ->title('Description')
                     ->rows(3)
@@ -126,7 +136,12 @@ public function createOrUpdate(Service $service, Request $request)
     // Store the attachments (adjust this part based on your requirements)
     $attachments = $request->input('service.attachment');
     // Attachments logic goes here
+         // Store the attachments
+$attachments = $request->input('service.attachment');
     // $service->attachments()->attach($attachments);
+    // $this->service->attachment()->syncWithoutDetaching(
+    //     $request->input('service.attachment', [])
+    // );
 
     Alert::info('You have successfully created or updated the service.');
 
