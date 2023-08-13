@@ -1,409 +1,708 @@
 @extends('layouts.app')
 @section('content')
-   
+   {{-- banner strats --}}
+   <section id="about-4" class="bg-lightgrey bg-tra-city pt-100 about-section division">
+	<div class="container">
+		<div class="row d-flex align-items-center">
+
+		
+	 <!-- About Text Section -->
+	 <div class="col-lg-7 col-xl-6">
+		<div class="about-4-txt mb-40">
+			<span class="section-id id-color">Our Commitment to work speaks for itself</span>
+			<h3 class="h3-lg darkblue-color">We provide the best services in this industry since 2015</h3>
+
+			<!-- Text #1 -->
+			<div class="box-list">							
+				<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+				<p>We are dedicated to helping individuals refine their English communication skills, fostering an environment of growth and learning. Our commitment to quality education has been the foundation of our institute since its establishment in 2015. We believe that effective communication is essential in today's competitive world.</p>							
+			</div>
+
+			<!-- Text #2 -->
+			<div class="box-list">							
+				<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+				<p>At Global Education Consultancy, we understand the diverse needs of our students, whether they are preparing for competitive exams or seeking personal and professional development. Our experienced team of instructors is here to guide and empower you, helping you succeed in exams and in life.</p>							
+			</div>
+
+			<!-- Button -->
+			<a href="tel: +91 8048040479" class="btn btn-md btn-primary black-hover">
+				Call:  +91 8048040479
+			</a>
+		</div>							
+	</div>
+	<!-- END About Text Section -->
 
 
-				<!-- BREADCRUMB
-				============================================= -->
+			<!-- SERVICES IMAGE -->
+			 <div class="col-lg-5 col-xl-5 offset-xl-1">
+				 <div class="about-4-img text-center">
+					<img class="img-fluid" src="images/image-04.png" alt="about-image">
+				</div>
+			 </div>
+
+
+		</div>    <!-- End row -->
+	</div>     <!-- End container -->
+</section>
+   {{-- banner ends --}}
+
+
+			    <!-- SERVICES-4
+        ============================================= -->
+		<section id="services-4" class="wide-70 services-section division">
+			<div class="container">
+				<!-- SECTION TITLE -->
+				<div class="row">
+					<div class="col-md-12 section-title center">
+						<!-- Title -->
+						<h2 class="h2-xs darkblue-color">What Global Services Offer</h2>
+						<!-- Text -->
+						<p class="p-md">Global offers a wide array of enticing opportunities that pave the way for success and self-discovery. Discover what Global offers and embark on a journey of knowledge, empowerment, and lasting connections.</p>
+					</div>
+				</div>
 				
-
-
-
-				<!-- SERVICES-7
-				============================================= -->
-				<section id="services-7" class="wide-60 services-section division">
-                    <div class="container">
-                        <!-- SECTION TITLE -->
-                        <div class="row">
-                            <div class="col-md-12 section-title center">
-                                <h2 class="h2-xs">Explore Our Top Ranked Services</h2>
-                                <p class="p-md">Discover a wide range of services with high rankings and quality offerings, providing valuable solutions for your needs.</p>
-                            </div>
-                        </div>
-                
-                        <div class="row">
-                            <!-- SERVICE BOX #1 -->
-                            @foreach ($services as $index => $service)
-                            @php
-                                // Calculate the background class number (1 to 8) based on loop index
-                                $bgClassNumber = ($index % 8) + 1;
-                                // Generate the corresponding background class
-                                $bgClass = 'bg-' . $bgClassNumber;
-                            @endphp
-                
-                            <div class="col-md-6 col-lg-4">
-                                <div class="sbox-7 sbox-color">
-                                    @if ($service->hero)
-                                        <!-- Image -->
-                                        <img class="img-fluid" src="{{ $service->hero }}" alt="service-image" />
-                                    @endif
-                
-                                    <!-- Text -->
-                                    <div class="sbox-7-txt {{ $bgClass }} white-color">
-                                        <!-- Title -->
-                                        <h5 class="h5-xl">{{ $service->title }}</h5>
-                                        <!-- Text -->
-                                        <p class="p-sm">{{ Illuminate\Support\Str::limit($service->description, $limit = 80, $end = '...') }}</p>
-                                        <!-- Link -->
-                                        <a href="{{ route('service.show', ['service' => $service]) }}" class="btn btn-sm btn-tra-white primary-hover">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div> <!-- End row -->
-                    </div> <!-- End container -->
-                </section> <!-- END SERVICES-7 -->
-                
-                <div class="blog-page-pagination">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center primary-pagination">
-                            <!-- Pagination Logic for Services -->
-                            {{-- Similar to the existing pagination for courses, adjust it if needed --}}
-                        </ul>
-                    </nav>
-                </div>
-                
-
-
-				<!-- SERVICES-9
-				============================================= -->
-				<section id="services-9" class="bg-lightgrey wide-100 services-section division">
-					<div class="container">
-
-
-						<!-- SECTION TITLE -->
-						<div class="row">	
-							<div class="col-md-12 section-title center">		
-
-				 				<!-- Title -->
-								<h2 class="h2-xs">Our Most Popular Courses</h2>
-
-								<!-- Text -->	
-								<p class="p-md">Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, 
-								   felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa
-								</p> 
-
-							</div>
-						</div>	 <!-- END SECTION TITLE -->	
-
-
-						<!-- SERVICE BOXES CAROUSEL -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="owl-carousel owl-theme owl-loaded services-carousel">
-                                    <!-- Loop through services -->
-                                    @foreach ($services as $index => $service)
-                                        @php
-                                            // Calculate the background class number (1 to 8) based on loop index
-                                            $bgClassNumber = ($index % 8) + 1;
-                                            // Generate the corresponding background class
-                                            $bgClass = 'bg-' . $bgClassNumber;
-                                        @endphp
-                        
-                                        <div class="sbox-9 {{ $bgClass }} sbox-9-color">
-                                            <!-- Image -->
-                                            @if ($service->hero)
-                                                <img class="img-fluid" src="{{ $service->hero }}" alt="service-image" />
-                                            @endif
-                        
-                                            <!-- Text -->
-                                            <div class="sbox-9-txt">
-                                                <!-- Title -->
-                                                <h5 class="h5-lg">{{ $service->title }}</h5>
-                        
-                                                <!-- Text -->
-                                                <p class="p-sm">{{ $service->description }}</p>
-                        
-                                                <!-- Link -->
-                                                <a href="{{ route('service.show', ['service' => $service]) }}">Read More <i class="fas fa-caret-right"></i></a>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        
-                              <!-- END SERVICE BOXES CAROUSEL -->
-
-
-					</div>     <!-- End container -->
-				</section>	<!-- END SERVICES-9 -->
-				
-
-
-
-				<!-- FAQs-1
-				============================================= -->
-				<section id="faqs-1" class="wide-100 faqs-section division">				
-					<div class="container">
-
-
-						<!-- SECTION TITLE -->
-						<div class="row">	
-							<div class="col-md-12 section-title center">		
-
-				 				<!-- Title -->
-								<h2 class="h2-xs">Need Some Help? Look Here</h2>
-
-								<!-- Text -->	
-								<p class="p-md">Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, 
-								   felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa
-								</p> 
-
-							</div>
-						</div>	 <!-- END SECTION TITLE -->	
-
-
-						<!-- QUESTIONS HOLDER -->
-						<div class="row">						
-							<div class="col-lg-10 offset-lg-1">
-					 			<div id="accordion" role="tablist">
-
-
-				 					<!-- QUESTION #1 -->
-				 					<div class="card">
-
-				 						<!-- Question -->
-									    <div class="card-header" role="tab" id="headingOne">
-									      	<h5 class="h5-sm">
-									       		<a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
-									         		<span>1.</span> What are the best free online English courses?
-									        	</a>
-									    	 </h5>
-									    </div>
-
-									    <!-- Answer -->
-									    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-									     	<div class="card-body">
-
-										        <!-- INFO BOX #1 -->
-												<div class="box-list">							
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Explore a wide range of study abroad destinations that offer excellent educational opportunities and vibrant cultural experiences. Whether you're interested in studying in Europe, Asia, North America, or any other continent, our expert consultants will guide you through the best options.</p>
-												</div>
-
-												<!-- INFO BOX #2 -->
-												<div class="box-list">	
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Discover top universities and colleges around the world that offer courses in your field of interest. From prestigious Ivy League institutions to cutting-edge research universities, we'll help you find the perfect fit for your academic aspirations.</p>
-												</div>	
-										
-
-									     	</div>
-									   	</div>
-
-
-									</div>	<!-- END QUESTION #1 -->
-
-
-									<!-- QUESTION #2 -->
-									<div class="card">
-
-										<!-- Question -->
-									    <div class="card-header" role="tab" id="headingTwo">
-									      	<h5 class="h5-sm">
-									       	    <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-									          		<span>2.</span> What is the registration process?
-									        	</a>
-									     	 </h5>
-									    </div>
-
-									    <!-- Answer -->
-									    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-											<div class="card-body">
-										
-												<p>Our application process is designed to be straightforward and hassle-free. First, schedule a consultation with one of our study abroad experts to discuss your academic goals and preferences. Then, we'll guide you through the necessary documentation, university applications, and visa procedures. You'll receive personalized support at every step of the application process to ensure a smooth and successful journey to your dream study destination.</p>
-										
-											</div>
-										</div>
-
-									</div>	<!-- END QUESTION #2 -->
-
-
-									<!-- QUESTION #3 -->
-									<div class="card">
-
-									 	<!-- Question -->
-										 <div class="card-header" role="tab" id="headingThree">
-											<h5 class="h5-sm">
-												<a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-													<span>3.</span> Are there scholarships available for international students?
-												</a>
-											</h5>
-										</div>
-
-									   	<!-- Answer -->
-										   <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-											<div class="card-body">
-										
-												<!-- Text -->	
-												<p>Yes, there are numerous scholarships and financial aid options available for international students. Our consultants will help you explore scholarship opportunities based on your academic achievements, financial needs, and the country you wish to study in. We'll assist you in preparing strong scholarship applications and essays to maximize your chances of receiving funding for your study abroad journey.</p>
-										
-												<!-- INFO BOX #1 -->
-												<div class="box-list">							
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Additionally, we can provide information on part-time job opportunities during your study abroad experience, which can further support your financial needs and enhance your overall learning experience.</p>
-												</div>
-										
-												<!-- INFO BOX #2 -->
-												<div class="box-list">							
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Contact us to explore the various scholarship options available and kickstart your journey to an affordable and rewarding study abroad experience.</p>
-												</div>		
-										
-											</div>
-										</div>
-
-									</div>	  <!-- END QUESTION #3 -->
-
-
-									<!-- QUESTION #4 -->
-									<div class="card">
-
-									 	<!-- Question -->
-										 <div class="card-header" role="tab" id="headingFour">
-											<h5 class="h5-sm">
-												<a class="collapsed" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">   		
-													<span>4.</span> What are the study abroad application deadlines?
-												</a>
-											</h5>
-										</div>
-
-									    <!-- Answer -->
-									    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
-											<div class="card-body">
-										
-												<!-- Text -->
-												<p>Application deadlines for study abroad programs vary depending on the university, country, and academic level. It's essential to start the application process well in advance to ensure you have enough time for documentation, language proficiency tests, and visa processing.</p>   
-										
-												<!-- INFO BOX #1 -->
-												<div class="box-list">							
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Our study abroad consultants will provide you with detailed information about specific application deadlines for your chosen universities and programs. We'll work together to create a personalized timeline that meets the application deadlines and increases your chances of acceptance.</p>							
-												</div>
-										
-												<!-- INFO BOX #2 -->
-												<div class="box-list">							
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Contact us today to get started with the study abroad application process and secure your spot in the university of your dreams.</p>							
-												</div>	  
-										
-											</div>
-										</div>
-									</div>	  <!-- END QUESTION #4 -->
-
-
-									<!-- QUESTION #5 -->
-									<div class="card">
-
-									 	<!-- Question -->
-										 <div class="card-header" role="tab" id="headingFive">
-											<h5 class="h5-sm">
-												<a class="collapsed" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">   		
-													<span>5.</span> How can I prepare for studying abroad?
-												</a>
-											</h5>
-										</div>
-
-									    <!-- Answer -->
-										<div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
-											<div class="card-body">
-											
-												<!-- Preparation Steps List -->
-												<div class="prep-steps-list-container">
-													<ul class="prep-steps-list">
-														<li><i class="fas fa-check"></i> Research your desired study abroad destination and university options.</li>
-														<li><i class="fas fa-check"></i> Ensure your academic documents and transcripts are up-to-date.</li>
-														<li><i class="fas fa-check"></i> Take language proficiency tests such as IELTS or TOEFL if required.</li>
-														<li><i class="fas fa-check"></i> Apply for scholarships and financial aid to support your studies.</li>
-														<li><i class="fas fa-check"></i> Complete the university application process before the deadlines.</li>
-														<li><i class="fas fa-check"></i> Obtain a student visa and necessary travel documents.</li>
-														<li><i class="fas fa-check"></i> Arrange suitable accommodation for your stay abroad.</li>
-														<li><i class="fas fa-check"></i> Learn about the culture and customs of your study destination.</li>
-														<li><i class="fas fa-check"></i> Make a checklist for necessary items to bring along.</li>
-													</ul>
-												</div>   
-											
-												<!-- INFO BOX #2 -->
-												<div class="box-list">							
-													<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-													<p>Our team is here to provide you with comprehensive support and resources during your study abroad preparation. Feel free to reach out to us with any questions or concerns, and we'll help you embark on this exciting journey with confidence.</p>							
-												</div>	  
-											
-											</div>
-										</div>
-
-									</div>	  <!-- END QUESTION #5 -->
-
-																				
-								</div>	<!-- END ACCORDION -->
-							</div>  <!-- End col-x -->	
-						</div>	<!-- END QUESTIONS HOLDER -->
-
-
-						<!-- MORE QUESTIONS BUTTON -->		
-						<div class="row">
-							<div class="col-md-12 text-center more-questions">
-								<h5 class="h5-md">Still have a question? <a href="faqs.html" class="darkblue-color">Ask your question here</a></h5>
-							</div>
+				<div class="row">
+					@foreach ($services as $index => $service)
+					@php
+						// Calculate the background class number (1 to 8) based on loop index
+						$bgClassNumber = ($index % 8) + 1;
+						// Generate the corresponding background class
+						$bgClass = 'bg-' . $bgClassNumber;
+					@endphp
+		
+					<!-- SERVICE BOX #1 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="sbox-4 icon-sm">
+							<a href="study-abroad-details.html">
+	
+								<!-- Icon -->
+								@if ($service->hero)
+								<!-- Image -->
+								{{-- <img class="img-fluid" src="{{ $service->hero }}" alt="service-image" /> --}}
+							@endif
+								<div class="sbox-4-icon primary-color"><img class="img-fluid" src="{{ $service->hero }}" alt="service-image" /></div>
+	
+								<!-- Text -->
+								<div class="sbox-4-txt">
+									<h5 class="h5-md primary-color">{{ $service->title }}</h5>
+									<p>{{ Illuminate\Support\Str::limit($service->description, $limit = 80, $end = '...') }}</p>
+								 <!-- Link -->
+								 <a href="{{ route('service.show', ['service' => $service]) }}" class="h6">Read More</a>
+								</div>
+	
+							</a>
 						</div>
+					</div>
+	
+					@endforeach
+				</div> <!-- End row -->
+			</div> <!-- End container -->
+	
+		</section>
+		<!-- END SERVICES-4 -->
+				
 
 
-					</div>	   <!-- End container -->		
-				</section>	<!-- END FAQs-1 -->	
+
+		
+                
+              
+                
+
+				
+
+{{-- start 3fetures --}}
+<section id="tabs-2" class="wide-60 tabs-section division">
+	<div class="container">
+		 <div class="row">
 
 
+			<!-- TABS NAVIGATION -->
+			<div class="col-md-12">
+				<div class="tabs-nav clearfix">
+					 <ul class="tabs-2 primary-tabs">
+
+						 <!-- TAB-1 LINK -->
+						<li class="tab-link displayed" data-tab="tab-11">
+							<span>Goverment Approved</span>
+						</li>
+
+						<!-- TAB-2 LINK -->
+						<li class="tab-link" data-tab="tab-12">
+							<span>No Hidden Costs</span>	
+						</li>
+
+						<!-- TAB-3 LINK -->
+						<li class="tab-link" data-tab="tab-13">
+							<span>Fast, Easy &amp; Secure</span>
+						</li>
+
+					</ul>
+				</div>
+			</div>	<!-- END TABS NAVIGATION -->
 
 
-				<!-- ABOUT-6
-				============================================= -->
-				<section id="about-6" class="bg-scroll pt-100 about-section division">
-					<div class="container white-color">
+			<!-- TABS CONTENT -->
+			 <div class="col-md-12">
+				<div class="tabs-content">
+
+
+					<!-- TAB-1 CONTENT -->
+					<div id="tab-11" class="tab-content displayed">
 						<div class="row d-flex align-items-center">
 
 
-							<!-- ABOUT IMAGE -->
-				 			<div class="col-lg-6">
-				 				<div class="about-6-img text-center">
-									<img class="img-fluid" src="images/image-08.png" alt="about-image" />
+							<!-- TAB-1 IMAGE -->
+							<div class="col-md-6 mb-40">
+								<div class="tab-img text-center">
+									<img class="img-fluid" src="images/image-01.png" alt="tab-image">
 								</div>
-				 			</div>
+							</div>
 
-						
-							<!-- ABOUT TEXT -->
-							<div class="col-lg-6">
-								<div class="about-6-txt pc-20">
+
+							<!-- TAB-1 TEXT -->
+							<div class="col-md-6">
+								<div class="txt-block pc-20 mb-40">	
 
 									<!-- Section ID -->	
-						 			<span class="section-id id-color">Overseas Education</span>
+									 <span class="section-id id-color">Visa Services</span>
 
-									<!-- Title -->
-									<h2 class="h2-xs">Looking for Quality Abroad Education?</h2>
+									 <!-- Title -->
+									<h3 class="h3-lg darkblue-color">Trusted Partner for Visa Success</h3>
 
 									<!-- Text -->
-									<p class="p-md">Fringilla risus luctus mauris auctor purus euismod pretium purus at pretium
-									   ligula rutrum viverra tortor sapien sodales quaerat sodales sapien blandit dolores and aliquam
-									</p>		
+									<p>Our institute holds an esteemed reputation as a trusted partner in navigating the complexities of visa applications. With our team's expertise and insights, we ensure a swift and efficient process, making your international aspirations a reality. Count on us for government-approved solutions that eliminate uncertainties and streamline your visa journey.
+									</p>
 
 									<!-- Small Title -->
-									<h5 class="h5-lg">350+ Universities in 17 Countries:</h5>		
+									<h5 class="h5-md darkblue-color">Accurate paperwork and stay up-to-date with the latest immigration regulations</h5>
 
-									<!-- Flags list -->
-									<ul class="flags-list">
-										<li><a href="country-details.html"><img src="images/flags/canada.png" alt="flag"/><span>Canada</span></a></li>
-										<li><a href="country-details.html"><img src="images/flags/australia.png" alt="flag"/><span>Australia</span></a></li>
-										<li><a href="country-details.html"><img src="images/flags/usa.png" alt="flag"/><span>USA</span></a></li>	
-										<li><a href="country-details.html"><img src="images/flags/united-kingdom.png" alt="flag"/><span>UK</span></a></li>	
-										<li><a href="country-details.html"><img src="images/flags/eu.png" alt="flag"/><span>Europe</span></a></li>	
-									</ul>		
+									<!-- Text Box #1 -->
+									<div class="box-list">							
+										<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+										<p>Our personalized approach ensures that your unique circumstances are taken into account. Whether you're pursuing higher education, skilled migration, or temporary work, we are committed to helping you achieve your international goals. Join the ranks of our satisfied clients who have successfully obtained their visas with our assistance.
+										</p>							
+									</div>
+										
+									<!-- Text Box #2 -->
+									{{-- <div class="box-list">							
+										<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+										<p>Embark on your journey to a global future with confidence. Choose Global Education Consultancy as your visa partner, and let us simplify the process, so you can focus on making the most of your international opportunities.</p>													
+									</div> --}}
 
-								</div>							
-							</div> <!-- END ABOUT TEXT -->
+								</div>
+							</div>				
+						
+
+						</div>  <!-- End row -->
+					</div>	<!-- END TAB-1 CONTENT -->
 
 
-						</div>    <!-- End row -->
-					</div>     <!-- End container -->
-				</section>	<!-- END ABOUT-6 -->
+					<!-- TAB-2 CONTENT for topic No Hidden Costs -->
+<div id="tab-12" class="tab-content">
+    <div class="row d-flex align-items-center">
+        <!-- TAB-2 IMAGE -->
+        <div class="col-md-6">
+            <div class="tab-img text-center mb-40">
+                <img class="img-fluid" src="images/image-03.png" alt="No Hidden Costs">
+            </div>
+        </div>
+        <!-- TAB-2 TEXT -->
+        <div class="col-md-6">
+            <div class="txt-block pc-20 mb-40">	
+                <!-- Section ID -->	
+                <span class="section-id id-color">Transparent Pricing</span>
+                <!-- Title -->
+                <h3 class="h3-lg darkblue-color">Value Without Surprises</h3>
+                <!-- Text -->
+                <p>At Global Education Consultancy, we believe in providing you with exceptional value without any hidden costs. We understand the importance of clear pricing to help you plan your education or language enhancement journey confidently.</p>
+                <!-- Text -->
+                <p>We're proud to be a trusted choice for thousands of individuals seeking quality language training, exam preparation, and overall personality development. With us, you'll experience:</p>
+                <!-- List of Benefits -->
+                <ul>
+                    <li><i class="fas fa-check"></i> Straightforward and transparent pricing.</li>
+                    <li><i class="fas fa-check"></i> No unexpected fees or hidden charges.</li>
+                    <li><i class="fas fa-check"></i> Clearly defined course inclusions.</li>
+                    <li><i class="fas fa-check"></i> Comprehensive value for your investment.</li>
+                </ul>
+                <!-- Button -->
+                <a href="#" class="btn btn-tra-grey primary-hover btn-arrow">
+                    <span>Discover More <i class="fas fa-arrow-right"></i></span>
+                </a>	
+            </div>
+        </div>
+    </div>  <!-- End row -->
+</div>	<!-- END TAB-2 CONTENT -->
+
+
+
+					<!-- TAB-3 CONTENT for topic Fast, Easy, and Secure -->
+<div id="tab-13" class="tab-content">
+    <div class="row d-flex align-items-center">
+        <!-- TAB-3 IMAGE -->
+        <div class="col-md-6">
+            <div class="tab-img text-center mb-40">
+                <img class="img-fluid" src="images/image-02.png" alt="Fast, Easy, and Secure">
+            </div>
+        </div>
+        <!-- TAB-3 TEXT -->
+        <div class="col-md-6">
+            <div class="txt-block pc-20 mb-40">
+                <!-- Section ID -->	
+                <span class="section-id id-color">Efficiency and Security</span>
+                <!-- Title -->
+                <h3 class="h3-lg darkblue-color">Your Journey Made Simple and Secure</h3>
+                <!-- Text -->
+                <p>Global Education Consultancy is committed to providing you with a seamless experience that is both fast and secure. We understand the importance of efficiency in today's dynamic world, and we ensure that your educational pursuits and language development are hassle-free.</p>
+                <!-- Text -->
+                <p>Here's what you can expect when you choose our services:</p>
+                <!-- List of Benefits -->
+                <ul>
+                    <li><i class="fas fa-check"></i> Streamlined processes for quick results.</li>
+                    <li><i class="fas fa-check"></i> Easy and user-friendly interactions.</li>
+                    <li><i class="fas fa-check"></i> Protection of your personal information.</li>
+                    <li><i class="fas fa-check"></i> Secure payment options.</li>
+                </ul>
+                <!-- Button -->
+                <a href="#" class="btn btn-tra-grey primary-hover btn-arrow">
+                    <span>Discover More <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>				
+    </div>  <!-- End row -->
+</div>	<!-- END TAB-3 CONTENT -->
+
+
+
+				</div>
+			</div>	<!-- END TABS CONTENT -->
+
+
+		</div>    <!-- End row -->
+	</div>     <!-- End container -->
+</section>
+{{-- end 3fetures --}}
+{{-- stats start --}}
+<div id="statistic-3" class="bg-image bg-scroll wide-60 statistic-section division">
+	<div class="container white-color">
+
+
+		<!-- STATISTIC 3 TITLE -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="statistic-3-title primary-border">
+					<h3 class="h3-lg">Thousands Of People Choose Our Services</h3>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-lg-12 ">
+				<div class="row">
+
+
+					<!-- STATISTIC BLOCK #1 -->
+					<div class="col-sm-6 col-md-3">							
+						<div class="statistic-block icon-sm">	
+
+							<!-- Text -->
+							<h5 class="yellow-color"><span class="count-element">2000</span>+</h5>
+							<p>Achiever Students</p>		
+
+						</div>								
+					</div>
+
+					<!-- STATISTIC BLOCK #2 -->
+					<div class="col-sm-6 col-md-3">						
+						<div class="statistic-block icon-sm">
+
+							<!-- Text -->									
+							<h5 class="yellow-color"><span class="count-element">4000</span>+</h5>
+							<p>Universities Collabration</p>	
+
+						</div>						
+					</div>
+
+					<!-- STATISTIC BLOCK #3 -->
+					<div class="col-sm-6 col-md-3">						
+						<div class="statistic-block icon-sm">
+
+							<!-- Text -->									
+							<h5 class="yellow-color"><span class="count-element">28</span>+</h5>
+							<p>Global Countries</p>
+
+						</div>						
+					</div>
+
+					<!-- STATISTIC BLOCK #4 -->
+					<div class="col-sm-6 col-md-3">										
+						<div class="statistic-block icon-sm">
+
+							<!-- Text -->										
+							<h5 class="yellow-color"><span class="count-element">20</span>+</h5>
+							<p>Years Of Experience</p>
+
+						</div>							
+					</div>
+
+
+				</div>
+			</div>
+		</div>	<!-- End row -->
+	</div>	 <!-- End container -->		
+</div>
+{{-- stats end --}}
+{{-- portfolio strats --}}
+<section id="brands-3" class="wide-80 brands-section division">
+	<div class="container">	
+
+
+		<!-- SECTION TITLE -->
+		<div class="row">	
+			<div class="col-md-12 section-title center">			
+
+				 <!-- Title -->
+				<h2 class="h2-xs">Partner Institutes &amp; Universities</h2>
+
+				<!-- Text -->	
+				<p class="p-md">Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, 
+				   felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa
+				</p> 
+
+			</div>
+		</div>	 <!-- END SECTION TITLE -->	
+
+
+		<!-- BRANDS FILTERING BUTTONS -->
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="brands-filter mb-50">
+					<button data-filter="*" class=""> All Countries</button>
+					<button data-filter=".canada" class="">Canada</button>
+					<button data-filter=".australia" class="">Australia</button>
+					<button data-filter=".usa" class="">USA</button>
+					<button data-filter=".uk" class="">United Kingdom</button>
+					<button data-filter=".new-zealand" class="">New Zealand</button>
+					<button data-filter=".china" class="">China</button>
+					<button class="last-button is-checked" data-filter=".south-korea">South Korea</button>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- BRANDS HOLDER -->
+		<div class="row">	
+			<div class="col-md-12 brands-list">
+				<div class="masonry-wrap grid-loaded hover-primary" style="position: relative; height: 198.469px;">
+
+					<!-- BRAND #1 -->
+					  <div class="brand-3 canada" style="position: absolute; left: 0%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-1.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #2 -->
+					  <div class="brand-3 canada" style="position: absolute; left: 20%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #3 -->
+					  <div class="brand-3 canada" style="position: absolute; left: 40%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-3.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #4 -->
+					  <div class="brand-3 canada" style="position: absolute; left: 60%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-4.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #5 -->
+					  <div class="brand-3 canada" style="position: absolute; left: 80%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-5.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #6 -->
+					  <div class="brand-3 australia" style="position: absolute; left: 0%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-6.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #7 -->
+					  <div class="brand-3 australia" style="position: absolute; left: 20%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-7.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #8 -->
+					  <div class="brand-3 australia" style="position: absolute; left: 40%; top: 0px; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #9 -->
+					  <div class="brand-3 usa" style="position: absolute; left: 60%; top: 198.469px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-1.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #10 -->
+					  <div class="brand-3 usa" style="position: absolute; left: 80%; top: 198.469px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #11 -->
+					  <div class="brand-3 usa" style="position: absolute; left: 0%; top: 396.938px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-3.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #12 -->
+					  <div class="brand-3 uk" style="position: absolute; left: 20%; top: 396.938px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-4.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #13 -->
+					  <div class="brand-3 uk" style="position: absolute; left: 40%; top: 396.938px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-5.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #14 -->
+					  <div class="brand-3 uk" style="position: absolute; left: 60%; top: 396.938px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-6.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #15 -->
+					  <div class="brand-3 uk" style="position: absolute; left: 80%; top: 396.938px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-7.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #16 -->
+					  <div class="brand-3 uk" style="position: absolute; left: 0%; top: 595.407px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #17 -->
+					  <div class="brand-3 new-zealand" style="position: absolute; left: 20%; top: 595.407px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-1.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #18 -->
+					  <div class="brand-3 new-zealand" style="position: absolute; left: 40%; top: 595.407px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #19 -->
+					  <div class="brand-3 new-zealand" style="position: absolute; left: 60%; top: 595.407px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-3.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #20 -->
+					  <div class="brand-3 china" style="position: absolute; left: 80%; top: 595.407px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-4.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #21 -->
+					  <div class="brand-3 china" style="position: absolute; left: 0%; top: 793.876px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-5.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #22 -->
+					  <div class="brand-3 china" style="position: absolute; left: 20%; top: 793.876px; transform: scale(0.001); transition-property: opacity, transform; transition-duration: 0.7s; transition-delay: 0ms; display: none;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-6.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #23 -->
+					  <div class="brand-3 south-korea" style="position: absolute; left: 0%; top: 0px;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-7.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #24 -->
+					  <div class="brand-3 south-korea" style="position: absolute; left: 20%; top: 0px;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-2.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+					  <!-- BRAND #25 -->
+					  <div class="brand-3 south-korea" style="position: absolute; left: 40%; top: 0px;">
+						  <div class="brand-logo">
+							<a href="#"><img class="img-fluid" src="images/brand-7.png" alt="brand-logo"></a>
+							<p class="p-sm">Enter University Name Here</p>
+						</div>
+					  </div>
+
+				</div>
+			</div>
+		</div>	<!-- END BRANDS HOLDER -->
+
+
+	</div>     <!-- End container -->
+</section>
+{{-- portfolio ends --}}
+			
+
+
+
+
+
+				<!-- REQUEST FORM
+       ============================================= -->
+<div id="request-1" class="bg-image wide-60 request-form-section division">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+
+
+            <!-- REQUEST FORM TEXT -->
+            <div class="col-md-6 col-xl-6">
+                <div class="request-txt white-color pc-20 mb-40">
+                    <!-- Section ID -->
+                    <span class="section-id id-color">Free 24/7 Support</span>
+                    <!-- Title -->
+                    <h2 class="h2-xs">Get Free & Quality Online Consultation</h2>
+                    <!-- Small Title -->
+                    <h5 class="h5-md">Experience Expert Guidance Anytime</h5>
+                    <!-- Text -->
+                    <p>Our team is available 24/7 to provide you with free and high-quality online consultation
+                        services. Whether you have questions about the immigration process or need guidance on visa
+                        applications, we are here to help. Our experienced professionals will assist you every step of
+                        the way, ensuring a smooth and successful journey towards your immigration goals.</p>
+                </div>
+            </div>
+            <!-- END REQUEST FORM TEXT -->
+
+
+
+            <!-- REQUEST FORM -->
+            <div class="col-md-6 col-xl-5 offset-xl-1">
+                <div id="request-form" class="text-center mb-40">
+                    <form name="requestForm" class="row request-form bg-lightgrey">
+
+                        <!-- Request Form Text -->
+                        <div class="col-md-12">
+                            <h5 class="h5-lg">Request Free Consultation</h5>
+                        </div>
+
+                        <!-- Request Form Input -->
+                        <div id="input-name" class="col-md-12">
+                            <input type="text" name="name" class="form-control name"
+                                placeholder="Enter Your Name*" required>
+                        </div>
+
+                        <!-- Request Form Input -->
+                        <div id="input-email" class="col-md-12">
+                            <input type="text" name="email" class="form-control email"
+                                placeholder="Enter Your Email*" required>
+                        </div>
+
+                        <!-- Request Form Input -->
+                        <div id="input-phone" class="col-md-12">
+                            <input type="tel" name="phone" class="form-control phone"
+                                placeholder="Enter Your Phone Number*" required>
+                        </div>
+
+                        <!-- Request Form Select -->
+
+
+                        <!-- Request Form Select -->
+                        <div id="input-country" class="col-md-12 input-country">
+                            <select id="inlineFormCustomSelect2" name="country" class="custom-select country"
+                                required>
+                                <option value="">Visa for</option>
+                                <option>USA</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>New Zealand</option>
+                                <option>United Kingdom</option>
+                                <option>Ireland</option>
+                                <option>Europe</option>
+                                <option>Asia</option>
+                            </select>
+                        </div>
+
+                        <!-- Request Form Button -->
+                        <div class="col-md-12 form-btn">
+                            <button type="submit" class="btn btn-primary tra-black-hover submit">Send
+                                Request</button>
+                        </div>
+
+                        <!-- Request Form Message -->
+                        <div class="col-md-12 request-form-msg text-center">
+                            <div class="sending-msg"><span class="loading"></span></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div> <!-- END REQUEST FORM -->
+
+
+        </div> <!-- End row -->
+    </div> <!-- End container -->
+</div> <!-- END REQUEST FORM -->
 
 
 @endsection
