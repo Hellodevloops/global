@@ -15,6 +15,7 @@ use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
 use Orchid\Screen\Fields\Cropper;
+use Orchid\Screen\Fields\Picture;
 use Orchid\Screen\Fields\Select;
 
 class ServiceEditScreen extends Screen
@@ -87,8 +88,29 @@ class ServiceEditScreen extends Screen
      *
      * @return Layout[]
      */
+    private function getIconClasses(): array
+    {
+        $cssFilePath = public_path('css/flaticon.css');
+        $cssContent = file_get_contents($cssFilePath);
+        $iconClasses = [];
+
+        $pattern = '/\.flaticon-[a-zA-Z0-9-]+/';
+
+        if (preg_match_all($pattern, $cssContent, $matches)) {
+            foreach ($matches[0] as $match) {
+                $iconClassName = str_replace('.', '', $match);
+                $iconClasses[$match] = ucwords(str_replace('-', ' ', $iconClassName));
+            }
+        }
+
+        return $iconClasses;
+    }
+
     public function layout(): array
     {
+        
+       $iconClasses = $this->getIconClasses();
+
         return [
             Layout::rows([
                 Input::make('service.title')
@@ -101,6 +123,13 @@ class ServiceEditScreen extends Screen
                     ->title('Large web banner image, generally in the front and center')
                     ->width(1000)
                     ->height(500),
+
+                    Select::make('service.icon_class')
+                    ->title('Select Icon')
+                    ->options($iconClasses)
+                    ->help('Select an icon class from the dropdown.'),
+
+                
                 TextArea::make('service.description')
                     ->title('Description')
                     ->rows(3)
@@ -131,8 +160,14 @@ class ServiceEditScreen extends Screen
  */
 public function createOrUpdate(Service $service, Request $request)
 {
-    $service->fill($request->get('service'))->save();
+    $serviceData = $request->get('service');
+    
+    // Remove the dot prefix from the icon class name
+    $serviceData['icon_class'] = ltrim($serviceData['icon_class'], '.');
 
+    $service->fill($serviceData)->save();
+
+   
     // Store the attachments (adjust this part based on your requirements)
     $attachments = $request->input('service.attachment');
     // Attachments logic goes here

@@ -51,6 +51,9 @@ class PlatformProvider extends OrchidServiceProvider
                 Menu::make('Services')
                 ->icon('wrench')
                 ->route('platform.service.list'),
+                Menu::make('Banners')
+                ->icon('picture')
+                ->route('platform.banner.list'),
 
            // Add a new menu item for managing countries
         //    Menu::make('Countries')
