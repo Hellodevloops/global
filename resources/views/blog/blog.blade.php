@@ -41,8 +41,7 @@
                             <div class="blog-post-txt">
 
                                 <!-- Post Meta -->
-                                <p class="post-meta"><a href="#" class="grey-color">Immigration Visa</a> - 12 min read
-                                </p>
+                                <p class="post-meta"><a href="#" class="grey-color">by {{ $post->author_name->name }}</a> 
 
                                 <!-- Title -->
                                 <h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">

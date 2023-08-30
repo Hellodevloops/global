@@ -97,7 +97,7 @@ class ServiceEditScreen extends Screen
                     ->help('Specify a short descriptive title for this service.'),
 
                     Cropper::make('service.hero')
-                    ->targetId()
+                    ->targetRelativeUrl()
                     ->title('Large web banner image, generally in the front and center')
                     ->width(1000)
                     ->height(500),

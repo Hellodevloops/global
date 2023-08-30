@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Post;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -56,8 +57,9 @@ public function show(Post $post)
     $previous = Post::where('id', '<', $post->id)->orderBy('id', 'desc')->first();
     $next = Post::where('id', '>', $post->id)->orderBy('id')->first();
     $recentposts = Post::orderBy('id', 'desc')->take(5)->get();
+    $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
     // Pass the current post, previous post, and next post to the view
-    return view('blog.blog_detail', compact('post', 'previous', 'next','recentposts'));
+    return view('blog.blog_detail', compact('post', 'previous', 'next','recentposts','recentservices'));
 }
 
 

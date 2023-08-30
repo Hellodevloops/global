@@ -105,7 +105,7 @@
                                             <!-- Latest Post -->
                                             <li class="clearfix">
                                                 <!-- Date -->
-                                                <p class="p-sm lp-date">{{ $recentpost->created_at->diffForHumans() }} - <span class="txt-400">Immigration Visa</span></p>
+                                                <p class="p-sm lp-date">{{ $recentpost->created_at->diffForHumans() }} - <span class="txt-400">{{ $recentpost->author_name->name }}</span></p>
                                 
                                                 <!-- Link -->
                                                 <h5 class="h5-sm">
@@ -124,29 +124,24 @@
 								
 
 								<!-- SIDEBAR COUNTRIES --> 
-								<div class="sidebar-countries sidebar-div mb-50">
-										
-									<!-- Title -->
-									<h5 class="h5-lg">Countries: </h5>
-
-									<!-- List -->
-									<ul class="sidebar-country-list clearfix">
-
-										<li><a href="country-detail.html">
-											<img class="img-fluid" src="images/sidebar-canada.jpg" alt="sidebar-image" />Canada</a>
-										</li>
-
-										<li><a href="country-detail.html">
-											<img class="img-fluid" src="images/sidebar-uk.jpg" alt="sidebar-image" />United Kingdom</a>
-										</li>
-
-										<li><a href="country-detail.html">
-											<img class="img-fluid" src="images/sidebar-usa.jpg" alt="sidebar-image" />United States of America</a>
-										</li>
-
-									</ul>
-
-								</div>
+                                <div class="blog-categories sidebar-div mb-50">
+        
+                           
+                                    <h5 class="h5-lg">Popular Services :</h5>
+                
+                                 
+                                    <ul class="blog-category-list clearfix">
+                                      
+                                        @foreach ($recentservices as $index => $popularservice)
+                                            @if ($index >= 5)
+                                               
+                                                @break
+                                            @endif
+                                            <li><a href="{{ route('service.show', ['service' => $popularservice]) }}" class="txt-400"><i class="fas fa-angle-double-right primary-color"></i>{{ $popularservice->title }}</a></li>
+                                        @endforeach
+                                    </ul>
+                
+                                </div>
 							
 
 							</aside>	<!-- END SIDEBAR -->
