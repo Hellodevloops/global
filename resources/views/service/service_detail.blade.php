@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <!-- ABOUT-9
         ============================================= -->
         <section id="about-9" class="wide-60 about-section division">
@@ -13,61 +14,18 @@
                             <!-- Title -->
                             <h3 class="h3-md">{{ $service->title }}</h3>
         
-                            <!-- ABOUT BOXES -->
-                            <div class="a-9-boxes row bg-lightgrey d-flex align-items-center">
-        
-                                <!-- ABOUT BOX #1 -->
-                                <!-- Update the icon and information for service duration -->
-                                <div class="col-md-4">
-                                    <div class="a9-box icon-xs">
-                                        <!-- Icon -->
-                                        <div class="a9-icon grey-color"><span class="flaticon-358-wall-clock-1"></span></div>
-                                        <!-- Text -->
-                                        <div class="a9-txt">
-                                            <p class="grey-color txt-400">Duration</p>
-                                            <p class="blue-color">{{ $service->duration }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <!-- ABOUT BOX #2 -->
-                                <!-- Update the icon and information for service assessment -->
-                                <div class="col-md-4">
-                                    <div class="a9-box icon-xs">
-                                        <!-- Icon -->
-                                        <div class="a9-icon grey-color"><span class="flaticon-151-presentation"></span></div>
-                                        <!-- Text -->
-                                        <div class="a9-txt">
-                                            <p class="grey-color txt-400">Assessment</p>
-                                            <p class="blue-color">{{ $service->assessment ? 'Yes' : 'No' }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <!-- ABOUT BOX #3 -->
-                                <!-- Update the icon and information for service certification -->
-                                <div class="col-md-4">
-                                    <div class="a9-box icon-xs">
-                                        <!-- Icon -->
-                                        <div class="a9-icon grey-color"><span class="flaticon-360-clipboard"></span></div>
-                                        <!-- Text -->
-                                        <div class="a9-txt">
-                                            <p class="grey-color txt-400">Certification</p>
-                                            <p class="blue-color">{{ $service->certification ? 'Yes' : 'No' }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                            </div> <!-- END ABOUT BOXES -->
+                            <div class="blog-post-img mb-30">
+                                <img class="img-fluid" src="{{ $service->hero }}" alt="blog-post-image" />
+                            </div>
         
                             <!-- Text -->
-                            {!! $service->description !!}
+                            {!! $service->body !!}
         
                         </div>
                     </div> <!-- END ABOUT TEXT -->
         
                     <!-- SIDEBAR -->
-                    {{-- <aside id="sidebar" class="col-lg-4">
+                    <aside id="sidebar" class="col-lg-4">
         
                       
                         <div class="blog-categories sidebar-div mb-50">
@@ -78,18 +36,41 @@
                          
                             <ul class="blog-category-list clearfix">
                               
-                                @foreach ($popularservice as $index => $popularservice)
+                                @foreach ($recentservices as $index => $popularservice)
                                     @if ($index >= 5)
                                        
                                         @break
                                     @endif
-                                    <li><a href="#" class="txt-400"><i class="fas fa-angle-double-right primary-color"></i>{{ $popularService->title }}</a></li>
+                                    <li><a href="{{ route('service.show', ['service' => $popularservice]) }}" class="txt-400"><i class="fas fa-angle-double-right primary-color"></i>{{ $popularservice->title }}</a></li>
                                 @endforeach
                             </ul>
         
                         </div>
+
+                        	<!-- LATEST POSTS -->
+								<div class="popular-posts sidebar-div mb-50">
+                                    <!-- Title -->
+                                    <h5 class="h5-lg">Latest Posts</h5>
+                                    <ul class="latest-posts">
+                                        @foreach ($recentposts as $recentpost)
+                                            <!-- Latest Post -->
+                                            <li class="clearfix">
+                                                <!-- Date -->
+                                                <p class="p-sm lp-date">{{ $recentpost->created_at->diffForHumans() }} - <span class="txt-400">{{ $recentpost->author_name->name }}</span></p>
+                                
+                                                <!-- Link -->
+                                                <h5 class="h5-sm">
+                                                    <a href="{{ route('posts.show', ['post' => $recentpost]) }}">{{ $recentpost->title }}</a>
+                                                </h5>
+                                
+                                                <!-- Text -->
+                                                <p>{{ $recentpost->excerpt }}</p>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
         
-                    </aside> <!-- END SIDEBAR --> --}}
+                    </aside> <!-- END SIDEBAR -->
         
                 </div> <!-- End row -->
             </div> <!-- End container -->
@@ -119,7 +100,7 @@
 
         <!-- SECTION TITLE -->
         <div class="row">
-            {{-- <div class="col-md-12 section-title center">
+            <div class="col-md-12 section-title center">
 
                
                 <h2 class="h2-xs">Our Most Popular Courses</h2>
@@ -129,17 +110,17 @@
                     felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa
                 </p>
 
-            </div> --}}
+            </div>
         </div> <!-- END SECTION TITLE -->
 
 
     <!-- SERVICE BOXES CAROUSEL -->
-{{-- <div class="row">
+<div class="row">
     <div class="col-lg-12">
         <div class="owl-carousel owl-theme owl-loaded services-carousel">
 
            
-            @foreach ($service as $index => $service)
+            {{-- @foreach ($service as $index => $service)
                 @php
                     
                     $bgClassNumber = ($index % 8) + 1;
@@ -169,11 +150,11 @@
                     </div>
 
                 </div>
-            @endforeach
+            @endforeach --}}
 
         </div>
     </div>
-</div> --}}
+</div>
 <!-- END SERVICE BOXES CAROUSEL -->
 
 

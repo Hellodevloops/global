@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service; // Import the Service model
+use App\Models\Post; // Import the Service model
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -54,8 +55,9 @@ class ServiceController extends Controller
         $previous = Service::where('id', '<', $service->id)->orderBy('id', 'desc')->first();
         $next = Service::where('id', '>', $service->id)->orderBy('id')->first();
         $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
+        $recentposts = Post::orderBy('id', 'desc')->take(5)->get();
         // Pass the current service, previous service, and next service to the view
-        return view('service.service_detail', compact('service','services','previous', 'next','recentservices'));
+        return view('service.service_detail', compact('service','services','previous', 'next','recentservices','recentposts'));
     }
 
     // ... (Remaining methods for edit, update, and destroy, if needed)
