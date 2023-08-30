@@ -25,6 +25,9 @@ class Service extends Model
         'body',
         'author',
         'hero',
+        'icon',
+        'icon_class',
+
     ];
 }
 

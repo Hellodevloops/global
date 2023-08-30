@@ -15,7 +15,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::latest()->paginate(6); // Order services by creation date in descending order
+        $services = Service::latest()->paginate(12); // Order services by creation date in descending order
 
         // Pass the services to the view for listing
         return view('service.index', ['services' => $services]);

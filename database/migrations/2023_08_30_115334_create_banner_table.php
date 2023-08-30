@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateServicesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('banner', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('hero')->nullable();
-            $table->string('icon_class')->nullable();
-            $table->string('description');
-            $table->text('body');
-            $table->bigInteger('author');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('banner');
     }
-}
+};

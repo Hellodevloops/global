@@ -157,6 +157,7 @@
                                  
 									$courses = \App\Models\Course::all(); // Replace \App\Models\Course with your actual Course model namespace
 									$service = \App\Models\Service::all(); 
+									$batches = \App\Models\Service::all(); 
 								@endphp
                                 <!-- DROPDOWN MENU -->
                                 <li class="nl-simple" aria-haspopup="true"><a href="{{ route('home') }}">Home</a>
@@ -172,11 +173,12 @@
                                                     href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
                                             </li>
                                         @endforeach
-                                        <li aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li>
+                                        {{-- <li aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li> --}}
 
 
                                     </ul>
                                 </li>
+                                <li class="nl-simple" aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li>
 								<li aria-haspopup="true"><a href="#">Services<span class="wsarrow"></span></a>
                                     <ul class="sub-menu">
                                         <li aria-haspopup="true"><a href="{{ route('service') }}">All Services</a></li>

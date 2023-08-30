@@ -1,106 +1,48 @@
 @extends('layouts.app')
 @section('content')
+   
     <!-- HERO-2
            ============================================= -->
-    <section id="hero-2" class="hero-section division">
+           @if ($banners->count() > 0)
+<section id="hero-1" class="hero-section division">
+    <!-- SLIDER -->
+    <div class="slider">
+        <ul class="slides">
+            @foreach ($banners as $banner)
+                @if ($banner->hero)
+                    <!-- SLIDE #2 -->
+                    <li>
+                        <!-- Background Image -->
+                        <img src="{{ $banner->hero }}" alt="slide-background">     
+                    </li> <!-- END SLIDE #2 -->
+                @endif
+            @endforeach
+        </ul>
+    </div> <!-- END SLIDER -->
 
-
-        <!-- SLIDER -->
-        <div class="slider">
-            <ul class="slides">
-
-
-
-                <!-- SLIDE #2 -->
-                <li id="slide-2">
-
-                    <!-- Background Image -->
-                    <img src="images/slider/slide-5.jpg" alt="slide-background">
-
-                    <!-- Image Caption -->
-                    <div class="caption d-flex align-items-center right-align">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-9 col-lg-7">
-                                    <div class="caption-txt white-color">
-
-                                        <!-- Title -->
-                                        <h3>Top Ranked</h3>
-                                        <h2>Universities</h2>
-
-                                        <!-- Text -->
-                                        <h4 class="h4-md">The World is Your Classroom: Enroll at Global. Explore our
-                                            diverse study programs abroad, discover scholarship opportunities, and receive
-                                            expert visa assistance. </h4>
-
-                                    </div>
-                                </div>
-                            </div> <!-- End row -->
-                        </div> <!-- End container -->
-                    </div> <!-- End Image Caption -->
-
-                </li> <!-- END SLIDE #2 -->
-
-
-                <!-- SLIDE #3 -->
-                <li id="slide-3">
-
-                    <!-- Background Image -->
-                    <img src="images/slider/slide-6.jpg" alt="slide-background">
-
-                    <!-- Image Caption -->
-                    <div class="caption d-flex align-items-center left-align">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="caption-txt">
-
-                                        <!-- Title -->
-                                        <h3>Unleash Your Potential </h3>
-                                        <h2 class="primary-color">Study Abroad with Global Eduction </h2>
-
-                                        <!-- Text -->
-                                        <h4 class="h4-md"> 40K+ Top Ranked Universities Collabration , 100% Counsellin
-                                            free, Travel, Forex ad insaurance assiantanceand many more...</h4>
-
-                                    </div>
-                                </div>
-                            </div> <!-- End row -->
-                        </div> <!-- End container -->
-                    </div> <!-- End Image Caption -->
-
-                </li> <!-- END SLIDE #3 -->
-
-            </ul>
-        </div> <!-- END SLIDER -->
-
-
-        <!-- SLIDER NAV -->
-        <div class="hero-slider-nav icon-xs white-color">
-            <div class="slider-btn">
-                <a class="slide-prev"><span class="flaticon-442-left-arrow"></span></a>
-                <a class="slide-next"><span class="flaticon-441-right-arrow"></span></a>
-            </div>
+    <!-- SLIDER NAV -->
+    <div class="hero-slider-nav icon-xs white-color">
+        <div class="slider-btn">
+            <a class="slide-prev"><span class="flaticon-442-left-arrow"></span></a>
+            <a class="slide-next"><span class="flaticon-441-right-arrow"></span></a>
         </div>
-        <section id="cta-3" class="bg-darkblue cta-section division">
-            <div class="container white-color">
-                <div class="row ">
-
-
-                    <!-- CALL TO ACTION TEXT -->
-                    <div class="col-lg-12">
-                        <div class="cta-txt text-center">
-                            <h4 class="h4-xs txt-400">Unlock Your Empowering Futures : Study Abroad Tales with World-Class
-                                Experts!</h4>
-                        </div>
+    </div>
+    <section id="cta-3" class="bg-darkblue cta-section division">
+        <div class="container white-color">
+            <div class="row ">
+                <!-- CALL TO ACTION TEXT -->
+                <div class="col-lg-12">
+                    <div class="cta-txt text-center">
+                        <h4 class="h4-xs txt-400">Unlock Your Empowering Futures: Study Abroad Tales with World-Class
+                            Experts!</h4>
                     </div>
+                </div>
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+    </section>
+</section> <!-- END HERO-2 -->
+@endif
 
-
-                </div> <!-- End row -->
-            </div> <!-- End container -->
-        </section>
-
-    </section> <!-- END HERO-2 -->
     <!-- HERO-3
            ============================================= -->
     <section id="hero-3" class="bg-scroll hero-section division">
@@ -576,7 +518,41 @@
 
                 </div>
             </div>
+            <div class="row">
+                @foreach ($services as $index => $service)
+                @php
+                    // Calculate the background class number (1 to 8) based on loop index
+                    $bgClassNumber = ($index % 8) + 1;
+                    // Generate the corresponding background class
+                    $bgClass = 'bg-' . $bgClassNumber;
+                @endphp
+    
+                <!-- SERVICE BOX #1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="sbox-4 icon-sm">
+                        <a href="{{ route('service.show', ['service' => $service]) }}">
 
+                            <!-- Icon -->
+                            @if ($service->icon)
+                            <!-- Image -->
+                            {{-- <img class="img-fluid" src="{{ $service->hero }}" alt="service-image" /> --}}
+                        @endif
+                            {{-- <div class="sbox-4-icon primary-color"><img class="img-fluid" src="{{ $service->icon }}" alt="service-image" /></div> --}}
+                            <div class="sbox-4-icon primary-color"><span class="{{ $service->icon_class }}"></span></div>
+                            <!-- Text -->
+                            <div class="sbox-4-txt">
+                                <h5 class="h5-md primary-color">{{ $service->title }}</h5>
+                                <p>{{ Illuminate\Support\Str::limit($service->description, $limit = 80, $end = '...') }}</p>
+                             <!-- Link -->
+                             <a href="{{ route('service.show', ['service' => $service]) }}" class="h6">Read More</a>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+
+                @endforeach
+            </div> <!-- End row -->
             <div class="row">
 
                 <!-- SERVICE BOX #1 -->
@@ -943,68 +919,95 @@
             </div>
             <!-- END REQUEST FORM TEXT -->
 
-
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
 
             <!-- REQUEST FORM -->
             <div class="col-md-6 col-xl-5 offset-xl-1">
                 <div id="request-form" class="text-center mb-40">
-                    <form name="requestForm" class="row request-form bg-lightgrey">
-
+                    <form name="requestForm" class="row request-form bg-lightgrey" method="POST"
+                          action="{{ route('contact.store') }}">
+                
+                        @csrf
+                
                         <!-- Request Form Text -->
                         <div class="col-md-12">
                             <h5 class="h5-lg">Request Free Consultation</h5>
                         </div>
-
+                
                         <!-- Request Form Input -->
                         <div id="input-name" class="col-md-12">
-                            <input type="text" name="name" class="form-control name"
-                                placeholder="Enter Your Name*" required>
+                            <input type="text" name="name" class="form-control name" placeholder="Enter Your Name*" required>
                         </div>
-
+                
                         <!-- Request Form Input -->
                         <div id="input-email" class="col-md-12">
-                            <input type="text" name="email" class="form-control email"
-                                placeholder="Enter Your Email*" required>
+                            <input type="text" name="email" class="form-control email" placeholder="Enter Your Email*" required>
                         </div>
-
+                
                         <!-- Request Form Input -->
                         <div id="input-phone" class="col-md-12">
-                            <input type="tel" name="phone" class="form-control phone"
-                                placeholder="Enter Your Phone Number*" required>
+                            <input type="tel" name="phone" class="form-control phone" placeholder="Enter Your Phone Number">
                         </div>
-
-                        <!-- Request Form Select -->
-
-
-                        <!-- Request Form Select -->
-                        <div id="input-country" class="col-md-12 input-country">
-                            <select id="inlineFormCustomSelect2" name="country" class="custom-select country"
-                                required>
-                                <option value="">Visa for</option>
-                                <option>USA</option>
-                                <option>Canada</option>
-                                <option>Australia</option>
-                                <option>New Zealand</option>
-                                <option>United Kingdom</option>
-                                <option>Ireland</option>
-                                <option>Europe</option>
-                                <option>Asia</option>
-                            </select>
+                
+                        <!-- Request Form Input -->
+                        <div id="input-subject" class="col-md-12">
+                            <input type="text" name="subject" class="form-control subject" placeholder="Enter Subject" required>
                         </div>
-
+                
+                        <!-- Request Form Textarea -->
+                        <div id="input-message" class="col-md-12">
+                            <textarea name="message" class="form-control message" placeholder="Enter Your Message"></textarea>
+                        </div>
+                
                         <!-- Request Form Button -->
                         <div class="col-md-12 form-btn">
-                            <button type="submit" class="btn btn-primary tra-black-hover submit">Send
-                                Request</button>
+                            <button type="submit" class="btn btn-primary tra-black-hover submit" id="submitBtn">Send Request</button>
                         </div>
-
+                
                         <!-- Request Form Message -->
                         <div class="col-md-12 request-form-msg text-center">
-                            <div class="sending-msg"><span class="loading"></span></div>
+                            <div id="sendingMsg"><span class="loading"></span></div>
+                            <div id="thankYouMessage" style="display: none;">
+                                <h3>Thank you for your message!</h3>
+                                <p>We will get in touch with you shortly.</p>
+                            </div>
                         </div>
-
+                
                     </form>
                 </div>
+                
+                <!-- Add this script at the end of your Blade template or in a separate JS file -->
+                <script>
+                    $(document).ready(function() {
+                        $('form[name="requestForm"]').submit(function(event) {
+                            event.preventDefault(); // Prevent the default form submission
+                            
+                            $('#sendingMsg .loading').text('Sending...'); // Display sending message
+                            
+                            var formData = $(this).serialize(); // Serialize the form data
+                
+                            // Send the AJAX request
+                            $.ajax({
+                                url: "{{ route('contact.store') }}", // The Laravel route to handle the form submission
+                                method: "POST",
+                                data: formData,
+                                success: function(response) {
+                                    // On success, display thank you message and hide sending message
+                                    $('#sendingMsg').hide();
+                                    $('#thankYouMessage').show();
+                                },
+                                error: function(xhr, status, error) {
+                                    // Handle the error if the AJAX request fails
+                                    console.error(error);
+                                    $('#sendingMsg .loading').text('Error!'); // Display an error message
+                                }
+                            });
+                        });
+                    });
+                </script>
+                
+                
             </div> <!-- END REQUEST FORM -->
 
 
