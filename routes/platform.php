@@ -30,6 +30,8 @@ use App\Orchid\Screens\CountryEditScreen;
 use App\Orchid\Screens\CountryListScreen;
 use App\Orchid\Screens\ServiceEditScreen; // Import the ServiceEditScreen
 use App\Orchid\Screens\ServiceListScreen; // Import the ServiceListScreen
+use App\Orchid\Screens\BannerEditScreen;
+use App\Orchid\Screens\BannerListScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -147,3 +149,9 @@ Route::screen('countries', CountryListScreen::class)
 
 Route::screen('services', ServiceListScreen::class) // Update to use ServiceListScreen
     ->name('platform.service.list'); // Update the route name
+
+    Route::screen('banner/{post?}', BannerEditScreen::class)
+    ->name('platform.banner.edit');
+
+Route::screen('banners', BannerListScreen::class)
+    ->name('platform.banner.list');
