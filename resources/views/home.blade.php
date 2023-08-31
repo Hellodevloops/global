@@ -2,31 +2,39 @@
 @section('content')
    
     <!-- HERO-2
-           ============================================= -->
-           @if ($banners->count() > 0)
+    
+============================================= -->
+@if ($banners->count() > 0)
 <section id="hero-1" class="hero-section division">
     <!-- SLIDER -->
-    <div class="slider">
-        <ul class="slides">
-            @foreach ($banners as $banner)
+    <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            @foreach ($banners as $index => $banner)
                 @if ($banner->hero)
-                    <!-- SLIDE #2 -->
-                    <li>
-                        <!-- Background Image -->
-                        <img src="{{ $banner->hero }}" alt="slide-background">     
-                    </li> <!-- END SLIDE #2 -->
+                    <li data-target="#bannerCarousel" data-slide-to="{{ $index }}" @if($index === 0) class="active" @endif></li>
                 @endif
             @endforeach
-        </ul>
+        </ol>
+        <div class="carousel-inner">
+            @foreach ($banners as $index => $banner)
+                @if ($banner->hero)
+                    <div class="carousel-item @if($index === 0) active @endif">
+                        <img src="{{ $banner->hero }}" class="d-block w-100" alt="slide-background">
+                    </div>
+                @endif
+            @endforeach
+        </div>
+        <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+       
     </div> <!-- END SLIDER -->
 
-    <!-- SLIDER NAV -->
-    <div class="hero-slider-nav icon-xs white-color">
-        <div class="slider-btn">
-            <a class="slide-prev"><span class="flaticon-442-left-arrow"></span></a>
-            <a class="slide-next"><span class="flaticon-441-right-arrow"></span></a>
-        </div>
-    </div>
     <section id="cta-3" class="bg-darkblue cta-section division">
         <div class="container white-color">
             <div class="row ">
@@ -42,6 +50,7 @@
     </section>
 </section> <!-- END HERO-2 -->
 @endif
+
 
     <!-- HERO-3
            ============================================= -->
