@@ -45,7 +45,7 @@
 										<div class="contact-box-icon"><span class="flaticon-172-telephone-1"></span></div>
 										<!-- Text -->
 										<div class="contact-box-txt">
-											<h5 class="h5-sm deepblue-color">Phone: 08048040479</h5>
+										<h5 class="h5-sm deepblue-color">Phone: 9371044425 , 9371844425</h5>
 											<!-- <h5 class="h5-xs deepblue-color">F: N/A</h5>	 -->
 											<p class="grey-color">Let's Talk</p>
 										</div>

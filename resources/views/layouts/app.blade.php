@@ -124,9 +124,9 @@
                         <!-- Contacts -->
                         <div class="headertopright header-contacts">
                             <!-- <a href="tel:123456789" class="callusbtn txt-400"><i class="fas fa-phone"></i>+91 8048040479</a> -->
-                            <a href="tel:8048040479" class="callusbtn b-right txt-400">&#8194;+91 8048040479</a>
-                            <a href="mailto:gec@gmail.com" class="txt-400"><i
-                                    class="far fa-envelope-open"></i>gec@gmail.com</a>
+                            <a href="tel:9371044425" class="callusbtn b-right txt-400">&#8194;+91 9371044425 ,+91 9371844425</a>
+                            <a href="mailinfo.gec@gmail.com" class="txt-400"><i
+                                    class="far fa-envelope-open"></i>mailinfo.gec@gmail.com ,mailinfo.gec1@gmail.com</a>
                         </div>
 
                     </div>
@@ -264,10 +264,10 @@
                             <p class="p-sm">College road, Nashik- 422005</p>
 
                             <!-- Phone -->
-                            <p class="p-sm mt-20">Phone: +91 8048040479</p>
+                            <p class="p-sm mt-20">Phone: 9371044425, 9371844425</p>
 
                             <!-- Email -->
-                            <p class="p-sm foo-email">Email: <a href="mailto:gec@gmail.com">gec@gmail.com</a></p>
+                            <a href="mailinfo.gec@gmail.com">mailinfo.gec@gmail.com  , mailinfo.gec1@gmail.com</a>
 
                             <!-- Working Hours -->
                             <p class="p-sm mt-20">Mon-Fri: 9:00AM - 6:30PM</p>
