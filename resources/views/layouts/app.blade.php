@@ -125,8 +125,8 @@
                         <div class="headertopright header-contacts">
                             <!-- <a href="tel:123456789" class="callusbtn txt-400"><i class="fas fa-phone"></i>+91 8048040479</a> -->
                             <a href="tel:9371044425" class="callusbtn b-right txt-400">&#8194;+91 9371044425 ,+91 9371844425</a>
-                            <a href="mailinfo.gec@gmail.com" class="txt-400"><i
-                                    class="far fa-envelope-open"></i>mailinfo.gec@gmail.com ,mailinfo.gec1@gmail.com</a>
+                            <a href="mailto:mailinfo.gec@gmail.com" class="txt-400"><i
+                                    class="far fa-envelope-open"></i>mailinfo.gec@gmail.com </a>
                         </div>
 
                     </div>
@@ -267,7 +267,7 @@
                             <p class="p-sm mt-20">Phone: 9371044425, 9371844425</p>
 
                             <!-- Email -->
-                            <a href="mailinfo.gec@gmail.com">mailinfo.gec@gmail.com  , mailinfo.gec1@gmail.com</a>
+                            <a href="mailto:mailinfo.gec@gmail.com">mailinfo.gec@gmail.com  , mailinfo.gec1@gmail.com</a>
 
                             <!-- Working Hours -->
                             <p class="p-sm mt-20">Mon-Fri: 9:00AM - 6:30PM</p>
