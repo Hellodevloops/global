@@ -539,7 +539,7 @@
                 <!-- SERVICE BOX #1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="sbox-4 icon-sm">
-                        <a href="{{ route('service.show', ['service' => $service]) }}">
+                        <a href="{{ route('services.show', ['slug' => $service->slug]) }}">
 
                             <!-- Icon -->
                             @if ($service->icon)
@@ -553,7 +553,7 @@
                                 <h5 class="h5-md primary-color">{{ $service->title }}</h5>
                                 <p>{{ Illuminate\Support\Str::limit($service->description, $limit = 80, $end = '...') }}</p>
                              <!-- Link -->
-                             <a href="{{ route('service.show', ['service' => $service]) }}" class="h6">Read More</a>
+                             <a href="{{ route('services.show', ['slug' => $service->slug]) }}" class="h6">Read More</a>
                             </div>
 
                         </a>
