@@ -48,16 +48,35 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    // public function show(Service $service)
+    // {
+    //     $services = Service::latest()->paginate(6); // Order services by creation date in descending order
+    //     // Retrieve the next and previous services
+    //     $previous = Service::where('id', '<', $service->id)->orderBy('id', 'desc')->first();
+    //     $next = Service::where('id', '>', $service->id)->orderBy('id')->first();
+    //     $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
+    //     $recentposts = Post::orderBy('id', 'desc')->take(5)->get();
+    //     // Pass the current service, previous service, and next service to the view
+    //     return view('service.service_detail', compact('service','services','previous', 'next','recentservices','recentposts'));
+    // }
+
+
+    public function show($slug)
     {
-        $services = Service::latest()->paginate(6); // Order services by creation date in descending order
-        // Retrieve the next and previous services
+        $service = Service::where('slug', $slug)->first();
+
+        // Check if the post is not found and handle accordingly
+        if (!$service) {
+            abort(404); // or any other error handling mechanism you prefer
+        }
+
+        // Retrieve the next and previous posts
         $previous = Service::where('id', '<', $service->id)->orderBy('id', 'desc')->first();
         $next = Service::where('id', '>', $service->id)->orderBy('id')->first();
+        $recentposts = Service::orderBy('id', 'desc')->take(3)->get();
         $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
-        $recentposts = Post::orderBy('id', 'desc')->take(5)->get();
         // Pass the current service, previous service, and next service to the view
-        return view('service.service_detail', compact('service','services','previous', 'next','recentservices','recentposts'));
+        return view('service.service_detail', compact('service', 'previous', 'next','recentposts','recentservices'));
     }
 
     // ... (Remaining methods for edit, update, and destroy, if needed)

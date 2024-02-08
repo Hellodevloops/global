@@ -41,8 +41,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // 
-        
+        //
+
     }
 
    /**
@@ -51,16 +51,36 @@ class PostController extends Controller
  * @param  \App\Models\Post  $post
  * @return \Illuminate\Http\Response
  */
-public function show(Post $post)
-{
-    // Retrieve the next and previous posts
-    $previous = Post::where('id', '<', $post->id)->orderBy('id', 'desc')->first();
-    $next = Post::where('id', '>', $post->id)->orderBy('id')->first();
-    $recentposts = Post::orderBy('id', 'desc')->take(5)->get();
-    $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
-    // Pass the current post, previous post, and next post to the view
-    return view('blog.blog_detail', compact('post', 'previous', 'next','recentposts','recentservices'));
-}
+
+// public function show(Post $post)
+// {
+//     // Retrieve the next and previous posts
+//     $previous = Post::where('id', '<', $post->id)->orderBy('id', 'desc')->first();
+//     $next = Post::where('id', '>', $post->id)->orderBy('id')->first();
+//     $recentposts = Post::orderBy('id', 'desc')->take(5)->get();
+//     $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
+//     // Pass the current post, previous post, and next post to the view
+//     return view('blog.blog_detail', compact('post', 'previous', 'next','recentposts','recentservices'));
+// }
+
+
+public function show($slug)
+ {
+     $post = Post::where('slug', $slug)->first();
+
+     // Check if the post is not found and handle accordingly
+     if (!$post) {
+         abort(404); // or any other error handling mechanism you prefer
+     }
+
+     // Retrieve the next and previous posts
+     $previous = Post::where('id', '<', $post->id)->orderBy('id', 'desc')->first();
+     $next = Post::where('id', '>', $post->id)->orderBy('id')->first();
+     $recentposts = Post::orderBy('id', 'desc')->take(3)->get();
+     $recentservices = Service::orderBy('id', 'desc')->take(5)->get();
+     // Pass the current post, previous post, and next post to the view
+     return view('blog.blog_detail', compact('post', 'previous', 'next','recentposts','recentservices'));
+ }
 
 
     /**

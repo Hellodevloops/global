@@ -10,12 +10,13 @@ use Orchid\Screen\AsSource;
 use Orchid\Filters\Types\Like;
 use App\Models\Contact;
 use App\Models\User;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 // use Orchid\Platform\Models\User;
 
 class Post extends Model
 {
-    use AsSource, Attachable, Filterable;
-
+    use AsSource, Attachable, Filterable, HasSlug;
     /**
      * @var array
      */
@@ -26,7 +27,7 @@ class Post extends Model
         'author',
         'hero',
     ];
-    
+
 
     /**
      * Name of columns to which HTTP sorting can be applied
@@ -52,6 +53,13 @@ class Post extends Model
     // {
     //     return $this->hasMany(Attachment::class, 'post_id');
     // }
-    
-    
+
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title') // change 'title' to the column you want to use as a basis for the slug
+            ->saveSlugsTo('slug');
+    }
+
+
 }

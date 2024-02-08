@@ -31,22 +31,34 @@
 
 
                             <!-- BLOG POST IMAGE -->
-                            @if ($post->hero)
+                            {{-- @if ($post->hero) --}}
                                 <div class="blog-post-img mb-30">
                                     <img class="img-fluid" src="{{ $post->hero }}" alt="blog-post-image" />
                                 </div>
-                            @endif
+                            {{-- @endif --}}
 
                             <!-- BLOG POST TEXT -->
                             <div class="blog-post-txt">
 
                                 <!-- Post Meta -->
-                                <p class="post-meta"><a href="#" class="grey-color">by {{ $post->author_name->name }}</a> 
+                                <p class="post-meta"><a href="#" class="grey-color">by {{ $post->author_name->name }}</a>
 
                                 <!-- Title -->
-                                <h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">
+                                {{-- <h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">
                                         <a href="{{ route('posts.show', ['post' => $post]) }}">{{ $post->title }}</a>
-                                </h5>
+                                </h5> --}}
+
+                                @if ($post->slug)
+    <h5 class="h5-lg">
+        <a href="{{ route('posts.show', ['slug' => $post->slug]) }}" class="darkblue-color">
+            {{ $post->title }}
+        </a>
+    </h5>
+@else
+    <h5 class="h5-lg">
+        {{ $post->title }}
+    </h5>
+@endif
 
                                 <!-- Text -->
                                 <p> {{ Illuminate\Support\Str::limit($post->description, $limit = 120, $end = '...') }}
@@ -64,9 +76,9 @@
                 @endforeach
                 <!-- END  BLOG POST #1 -->
 
-               
-              
-                
+
+
+
 
             </div> <!-- END BLOG POSTS HOLDER -->
             <div class="blog-page-pagination">

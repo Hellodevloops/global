@@ -33,21 +33,21 @@ Route::get('/about', function () {
 
 Route::get('/product', function () {
     return view('services.product');
-})->name('product'); 
+})->name('product');
 
 
 Route::get('/iot', function () {
     return view('services.iot');
-})->name('iot'); 
+})->name('iot');
 
 Route::get('/mobileapp', function () {
     return view('services.mobileapp');
-})->name('mobileapp'); 
+})->name('mobileapp');
 
 
 Route::get('/placement', function () {
     return view('services.placement');
-})->name('placement'); 
+})->name('placement');
 
 Route::get('/recruitment', function () {
     return view('services.recruitment');
@@ -55,26 +55,26 @@ Route::get('/recruitment', function () {
 
 Route::get('/usa', function () {
     return view('services.usa');
-})->name('usa'); 
+})->name('usa');
 
 Route::get('/canada', function () {
     return view('services.canada');
-})->name('canada'); 
+})->name('canada');
 
 
 
 
 Route::get('/di_bi', function () {
     return view('services.dibi');
-})->name('di_bi'); 
+})->name('di_bi');
 
 Route::get('/dw_eng', function () {
     return view('services.datawarehouse');
-})->name('dw_eng'); 
+})->name('dw_eng');
 
 Route::get('/webapp', function () {
     return view('services.webapp');
-})->name('webapp'); 
+})->name('webapp');
 
 Route::get('/staffing', function () {
     return view('services.staffing');
@@ -96,9 +96,15 @@ Route::get('/resume_parser', function () {
 Route::resource('contact', ContactController::class);
 // end
 // Route for listing all posts
-Route::get('/blog', [PostController::class, 'index'])->name('blog');
-Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+// previous
+// Route::get('/blog', [PostController::class, 'index'])->name('blog');
+// Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+// // new
+// Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
+// latest and useful
+Route::get('/blog', [PostController::class, 'index'])->name('blog');
+Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/course', [CourseController::class, 'index'])->name('course');
 Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
@@ -114,6 +120,9 @@ Route::get('/countries/{country}', [CountryController::class, 'show'])->name('co
 
 
 
-// Routes for services
+// Routes for services old ones
+// Route::get('/service', [ServiceController::class, 'index'])->name('service');
+// Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service.show');
+
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
-Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service.show');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');

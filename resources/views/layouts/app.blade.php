@@ -154,10 +154,10 @@
 
                                 @php
                                     // Fetch courses from the database using Eloquent query or any other method
-                                 
+
 									$courses = \App\Models\Course::all(); // Replace \App\Models\Course with your actual Course model namespace
-									$service = \App\Models\Service::all(); 
-									$batches = \App\Models\Service::all(); 
+									$service = \App\Models\Service::all();
+									$batches = \App\Models\Service::all();
 								@endphp
                                 <!-- DROPDOWN MENU -->
                                 <li class="nl-simple" aria-haspopup="true"><a href="{{ route('home') }}">Home</a>
@@ -185,10 +185,11 @@
                                         @foreach ($service as $service)
                                             <li aria-haspopup="true">
                                                 <a
-                                                    href="{{ route('service.show', ['service' => $service->id]) }}">{{ $service->title }}</a>
+                                                    {{-- href="{{ route('service.show', ['service' => $service->id]) }}">{{ $service->title }}</a> --}}
+                                                    href="{{ route('services.show', ['slug' => $service->slug]) }}">{{ $service->title }}</a>
                                             </li>
                                         @endforeach
-                                      
+
 
 
                                     </ul>
@@ -206,7 +207,7 @@
 										   <li aria-haspopup="true"><a href="country-details.html">New zealand</a></li>
 										   <li aria-haspopup="true"><a href="country-details.html">Europe </a></li>
 										   <li aria-haspopup="true"><a href="country-details.html">Asia</a></li>
-										  
+
 										</ul>
 								   </li> --}}
                                 <!-- END DROPDOWN MENU -->
@@ -467,12 +468,12 @@
    <a href="javascript:chooseStyle('green-theme', 60)"><img src="{{ asset('images/color-scheme/green.png') }}" width="50" height="50" alt="" /></a>
   </div>
  </div>
- 
+
  <div class="stBlock text-center" style="margin: 0px 32px 25px 20px;">
   <a class="btn btn-primary black-hover" href="javascript:chooseStyle('none', 60)">Reset color</a>
  </div>
 
-      
+
 </div>
 </div>
 </div>	 -->

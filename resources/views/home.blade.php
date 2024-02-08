@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-   
+
     <!-- HERO-2
-    
+
 ============================================= -->
 @if ($banners->count() > 0)
 <section id="hero-1" class="hero-section division">
@@ -32,7 +32,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-       
+
     </div> <!-- END SLIDER -->
 
     <section id="cta-3" class="bg-darkblue cta-section division">
@@ -164,15 +164,15 @@
                                                     <!-- Text -->
                                                     <p class="grey-color">{{ Illuminate\Support\Str::limit($post->description, $limit = 80, $end = '...') }}</p>
                                                     <!-- Post Data -->
-                                                  
+
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                @endif	
+                                @endif
                             @endforeach
-                            
+
                             </ul>
                         </div>
 
@@ -199,12 +199,12 @@
                                         </div>
                                     </div>
                                 </div>
-								@endif	
+								@endif
                             @endforeach
 
-       
 
-                       
+
+
 
                         </div>
 
@@ -535,7 +535,7 @@
                     // Generate the corresponding background class
                     $bgClass = 'bg-' . $bgClassNumber;
                 @endphp
-    
+
                 <!-- SERVICE BOX #1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="sbox-4 icon-sm">
@@ -562,7 +562,7 @@
 
                 @endforeach
             </div> <!-- End row -->
-          
+
         </div> <!-- End container -->
 
     </section>
@@ -759,9 +759,24 @@
                                     </p>
 
                                     <!-- Title -->
-                                    <h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">
+                                    {{-- <h5 class="h5-lg"><a href="single-post.html" class="darkblue-color">
                                             <a href="{{ route('posts.show', ['post' => $post]) }}">{{ $post->title }}</a>
-                                    </h5>
+                                    </h5> --}}
+
+                                    {{-- @if ($post->slug)
+    <h5 class="h5-lg">
+        <a href="{{ route('posts.show', ['slug' => $post->slug]) }}" class="darkblue-color">
+            {{ $post->title }}
+        </a>
+    </h5>
+@else
+    <h5 class="h5-lg">
+        {{ $post->title }}
+    </h5>
+@endif --}}
+
+
+
 
                                     <!-- Text -->
                                     <p> {{ Illuminate\Support\Str::limit($post->description, $limit = 120, $end = '...') }}
@@ -818,51 +833,51 @@
             <!-- END REQUEST FORM TEXT -->
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
+
 
             <!-- REQUEST FORM -->
             <div class="col-md-6 col-xl-5 offset-xl-1">
                 <div id="request-form" class="text-center mb-40">
                     <form name="requestForm" class="row request-form bg-lightgrey" method="POST"
                           action="{{ route('contact.store') }}">
-                
+
                         @csrf
-                
+
                         <!-- Request Form Text -->
                         <div class="col-md-12">
                             <h5 class="h5-lg">Request Free Consultation</h5>
                         </div>
-                
+
                         <!-- Request Form Input -->
                         <div id="input-name" class="col-md-12">
                             <input type="text" name="name" class="form-control name" placeholder="Enter Your Name*" required>
                         </div>
-                
+
                         <!-- Request Form Input -->
                         <div id="input-email" class="col-md-12">
                             <input type="text" name="email" class="form-control email" placeholder="Enter Your Email*" required>
                         </div>
-                
+
                         <!-- Request Form Input -->
                         <div id="input-phone" class="col-md-12">
                             <input type="tel" name="phone" class="form-control phone" placeholder="Enter Your Phone Number">
                         </div>
-                
+
                         <!-- Request Form Input -->
                         <div id="input-subject" class="col-md-12">
                             <input type="text" name="subject" class="form-control subject" placeholder="Enter Subject" required>
                         </div>
-                
+
                         <!-- Request Form Textarea -->
                         <div id="input-message" class="col-md-12">
                             <textarea name="message" class="form-control message" placeholder="Enter Your Message"></textarea>
                         </div>
-                
+
                         <!-- Request Form Button -->
                         <div class="col-md-12 form-btn">
                             <button type="submit" class="btn btn-primary tra-black-hover submit" id="submitBtn">Send Request</button>
                         </div>
-                
+
                         <!-- Request Form Message -->
                         <div class="col-md-12 request-form-msg text-center">
                             <div id="sendingMsg"><span class="loading"></span></div>
@@ -871,20 +886,20 @@
                                 <p>We will get in touch with you shortly.</p>
                             </div>
                         </div>
-                
+
                     </form>
                 </div>
-                
+
                 <!-- Add this script at the end of your Blade template or in a separate JS file -->
                 <script>
                     $(document).ready(function() {
                         $('form[name="requestForm"]').submit(function(event) {
                             event.preventDefault(); // Prevent the default form submission
-                            
+
                             $('#sendingMsg .loading').text('Sending...'); // Display sending message
-                            
+
                             var formData = $(this).serialize(); // Serialize the form data
-                
+
                             // Send the AJAX request
                             $.ajax({
                                 url: "{{ route('contact.store') }}", // The Laravel route to handle the form submission
@@ -904,8 +919,8 @@
                         });
                     });
                 </script>
-                
-                
+
+
             </div> <!-- END REQUEST FORM -->
 
 
