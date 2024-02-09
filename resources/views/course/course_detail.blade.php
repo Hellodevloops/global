@@ -70,7 +70,7 @@
 
                         {{-- <li class="nl-simple" aria-haspopup="true"> --}}
                             <a href="{{ asset('contact') }}"
-                                class="header-btn btn-primary btn-sm tra-black-hover last-link">Our Partners</a>
+                                class="header-btn btn-primary btn-sm tra-black-hover last-link">Book A Free Consultancy</a>
                         {{-- </li> --}}
 
                         <!-- Text -->
