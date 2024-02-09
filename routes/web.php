@@ -106,8 +106,14 @@ Route::resource('contact', ContactController::class);
 Route::get('/blog', [PostController::class, 'index'])->name('blog');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
 
+// without slu
+// Route::get('/course', [CourseController::class, 'index'])->name('course');
+// Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
+// with slugs
 Route::get('/course', [CourseController::class, 'index'])->name('course');
-Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
+
 
 Route::get('/batch', [BatchController::class, 'index'])->name('batch');
 Route::get('/batchs/{batch}', [BatchController::class, 'show'])->name('batchs.show');

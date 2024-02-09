@@ -170,7 +170,7 @@
                                         @foreach ($courses as $course)
                                             <li aria-haspopup="true">
                                                 <a
-                                                    href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
+                                                    href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
                                             </li>
                                         @endforeach
                                         {{-- <li aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li> --}}
@@ -321,7 +321,7 @@
                                 @endif
 
                                 <li><a
-                                        href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
+                                        href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
                                 </li>
 
                                 @php $counter++; @endphp

@@ -40,8 +40,8 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        // 
-        
+        //
+
     }
 
    /**
@@ -50,16 +50,37 @@ class CourseController extends Controller
  * @param  \App\Models\course  $course
  * @return \Illuminate\Http\Response
  */
-public function show(Course $course)
+
+// public function show(Course $course)
+// {
+//     $courses = Course::latest()->paginate(6); // Order courses by creation date in descending order
+//     // Retrieve the next and previous courses
+//     $previous = Course::where('id', '<', $course->id)->orderBy('id', 'desc')->first();
+//     $next = Course::where('id', '>', $course->id)->orderBy('id')->first();
+//     $recentcourses = Course::orderBy('id', 'desc')->take(5)->get();
+//     // Pass the current course, previous course, and next course to the view
+//     return view('course.course_detail', compact('course','courses','previous', 'next','recentcourses'));
+// }
+
+public function show($slug)
 {
-    $courses = Course::latest()->paginate(6); // Order courses by creation date in descending order
-    // Retrieve the next and previous courses
+    $course = Course::where('slug', $slug)->first();
+
+    // Check if the post is not found and handle accordingly
+    if (!$course) {
+        abort(404); // or any other error handling mechanism you prefer
+    }
+
+    // Retrieve the next and previous posts
     $previous = Course::where('id', '<', $course->id)->orderBy('id', 'desc')->first();
     $next = Course::where('id', '>', $course->id)->orderBy('id')->first();
+    // $recentposts = Course::orderBy('id', 'desc')->take(3)->get();
     $recentcourses = Course::orderBy('id', 'desc')->take(5)->get();
+    $courses = Course::all(); // You might want to adjust this according to your needs
     // Pass the current course, previous course, and next course to the view
-    return view('course.course_detail', compact('course','courses','previous', 'next','recentcourses'));
+    return view('course.course_detail', compact('course', 'previous', 'next','recentcourses','courses'));
 }
+
 
 
     /**
