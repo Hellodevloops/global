@@ -222,7 +222,7 @@
                                 </form> --}}
                                 <li class="nl-simple" aria-haspopup="true">
                                     <a href="https://nashik.globaleducationconsultancy.in/latest-updates/1"
-                                        >Update</a>
+                                    class="header-btn btn-primary btn-sm tra-black-hover last-link">Update</a>
                                 </li>
 
                                 <li class="nl-simple" aria-haspopup="true"><a
