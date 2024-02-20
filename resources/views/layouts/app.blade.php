@@ -216,6 +216,15 @@
                                         Stories</a></li>
                                 <!-- MEGAMENU -->
 
+                                {{-- <form action="https://nashik.globaleducationconsultancy.in/latest-updates/1" method="GET">
+                                    <!-- Your button -->
+                                    <button type="submit" class="btn btn-primary mt-4" fdprocessedid="ri7lf">Get in Touch</button>
+                                </form> --}}
+                                <li class="nl-simple" aria-haspopup="true">
+                                    <a href="https://nashik.globaleducationconsultancy.in/latest-updates/1"
+                                        >Update</a>
+                                </li>
+
                                 <li class="nl-simple" aria-haspopup="true"><a
                                         href="{{ route('contact.index') }}">Contact us</a></li>
 
