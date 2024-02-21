@@ -140,17 +140,17 @@
 
                         <!-- LOGO IMAGE -->
                         <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 90 pixels) -->
-                        <div class="desktoplogo"><a href="#hero-1" class="logo-black"><img
+                        {{-- <div class="desktoplogo"><a href="#hero-1" class="logo-black"><img
                                     src="{{ asset('images/logo.png') }}" width="170" height="80"
                                     alt="header-logo"></a></div>
                         <div class="desktoplogo"><a href="#hero-1" class="logo-white"><img
                                     src="{{ asset('images/logo.png') }}" width="170" height="80"
-                                    alt="header-logo"></a></div>
+                                    alt="header-logo"></a></div> --}}
 
 
                         <!-- MAIN MENU -->
-                        <nav class="wsmenu clearfix blue-header">
-                            <ul class="wsmenu-list">
+                        <nav class="wsmenu clearfix blue-header" style="display: flex; justify-content: space-between;">
+                            <ul class="wsmenu-list" style="display: flex; list-style: none; margin: 0; padding: 0;">
 
                                 @php
                                     // Fetch courses from the database using Eloquent query or any other method
@@ -160,86 +160,62 @@
                                     $batches = \App\Models\Service::all();
                                 @endphp
                                 <!-- DROPDOWN MENU -->
-                                <li class="nl-simple" aria-haspopup="true"><a href="{{ route('home') }}">Home</a>
+                                <li class="nl-simple" aria-haspopup="true">
+                                    <div class="desktoplogo">
+                                        <a href="#hero-1" class="logo-black">
+                                            <img src="{{ asset('images/logo.png') }}" width="150" height="70" alt="header-logo">
+                                        </a>
+                                    </div>
+                                    <div class="desktoplogo">
+                                        <a href="#hero-1" class="logo-white">
+                                            <img src="{{ asset('images/logo.png') }}" width="150" height="70" alt="header-logo">
+                                        </a>
+                                    </div>
                                 </li>
-                                <li class="nl-simple" aria-haspopup="true"><a href="{{ route('about') }}">About
-                                        us</a></li>
-                                <li aria-haspopup="true"><a href="#">Courses<span class="wsarrow"></span></a>
-                                    <ul class="sub-menu">
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ route('home') }}" style="font-size: inherit;">Home</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px; margin-left: 15px;"><a href="{{ route('about') }}" style="font-size: inherit;">About us</a></li>
+                                <li aria-haspopup="true" style="font-size: 12px;">
+                                    <a href="#" style="font-size: inherit;">Courses<span class="wsarrow"></span></a>
+                                    <ul class="sub-menu" style="font-size: inherit;">
                                         <li aria-haspopup="true"><a href="{{ route('course') }}">All Courses</a></li>
                                         @foreach ($courses as $course)
                                             <li aria-haspopup="true">
-                                                <a
-                                                    href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
+                                                <a href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
                                             </li>
                                         @endforeach
-                                        {{-- <li aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li> --}}
-
                                     </ul>
                                 </li>
-                                <li class="nl-simple" aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li>
-                                <li aria-haspopup="true"><a href="#">Services<span class="wsarrow"></span></a>
-                                    <ul class="sub-menu">
+                                <li aria-haspopup="true" style="font-size: 12px;">
+                                    <a href="#" style="font-size: inherit;">Services<span class="wsarrow"></span></a>
+                                    <ul class="sub-menu" style="font-size: inherit;">
                                         <li aria-haspopup="true"><a href="{{ route('service') }}">All Services</a></li>
                                         @foreach ($service as $service)
-                                            <li aria-haspopup="true">
-                                                <a
-                                                    {{-- href="{{ route('service.show', ['service' => $service->id]) }}">{{ $service->title }}</a> --}}
-                                                    href="{{ route('services.show', ['slug' => $service->slug]) }}">{{ $service->title }}</a>
-                                            </li>
+                                        <li aria-haspopup="true">
+                                            <a href="{{ route('services.show', ['slug' => $service->slug]) }}">{{ $service->title }}</a>
+                                        </li>
                                         @endforeach
-
                                     </ul>
                                 </li>
-
-
-
-
-                                {{-- <li aria-haspopup="true"><a href="#">Study At <span class="wsarrow"></span></a>
-										<ul class="sub-menu">
-											<li aria-haspopup="true"><a href="country-details.html">United states</a></li>
-											<li aria-haspopup="true"><a href="country-details.html">Canada</a></li>
-											<li aria-haspopup="true"><a href="country-details.html">United kingdom</a></li>
-											<li aria-haspopup="true"><a href="country-details.html">Ireland</a></li>
-											<li aria-haspopup="true"><a href="country-details.html">Australia</a></li>
-										   <li aria-haspopup="true"><a href="country-details.html">New zealand</a></li>
-										   <li aria-haspopup="true"><a href="country-details.html">Europe </a></li>
-										   <li aria-haspopup="true"><a href="country-details.html">Asia</a></li>
-
-										</ul>
-								   </li> --}}
-                                <!-- END DROPDOWN MENU -->
-
-                                <li class="nl-simple" aria-haspopup="true"><a href="{{ route('blog') }}">Our
-                                        Stories</a></li>
-                                <!-- MEGAMENU -->
-
-                                {{-- <form action="https://nashik.globaleducationconsultancy.in/latest-updates/1" method="GET">
-                                    <!-- Your button -->
-                                    <button type="submit" class="btn btn-primary mt-4" fdprocessedid="ri7lf">Get in Touch</button>
-                                </form> --}}
-
-        <li class="nl-simple" aria-haspopup="true">
-            <a href="https://nashik.globaleducationconsultancy.in/latest-updates/1"
-                class="header-btn btn-primary btn-sm tra-black-hover last-link">Update</a>
-        </li>
-
-                                <li class="nl-simple" aria-haspopup="true"><a
-                                        href="{{ route('contact.index') }}">Contact us</a></li>
-
-                                <!-- SIMPLE NAVIGATION LINK -->
-                                {{-- <li class="nl-simple" aria-haspopup="true"><a href="#"></a></li> --}}
-
-
-                                <!-- LAST NAVIGATION LINK -->
-                                <li class="nl-simple" aria-haspopup="true">
-                                    <a href="{{ asset('institute.pdf') }}"
-                                        class="header-btn btn-primary btn-sm tra-black-hover last-link">Our Partners</a>
-                                </li>
-
+                                {{-- <li aria-haspopup="true" style="font-size: 12px;">
+                                    <a href="#" style="font-size: inherit;">Courses<span class="wsarrow"></span></a>
+                                    <ul class="sub-menu" style="font-size: inherit;">
+                                        <li aria-haspopup="true"><a href="{{ route('course') }}">All Courses</a></li>
+                                        @foreach ($courses as $course)
+                                            <li aria-haspopup="true">
+                                                <a href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li> --}}
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ route('blog') }}" style="font-size: inherit;">Our Stories</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="https://nashik.globaleducationconsultancy.in/latest-updates/1" style="font-size: inherit;">Update</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ route('contact.index') }}" style="font-size: inherit;">Contact us</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ asset('institute.pdf') }}" class="header-btn btn-primary btn-sm tra-black-hover last-link" style="font-size: inherit;">Our Partners</a></li>
 
                             </ul>
-                        </nav> <!-- END MAIN MENU -->
+                        </nav>
+
+                        <!-- END MAIN MENU -->
 
                     </div>
                 </div> <!-- END NAVIGATION MENU -->
