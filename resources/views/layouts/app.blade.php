@@ -155,10 +155,10 @@
                                 @php
                                     // Fetch courses from the database using Eloquent query or any other method
 
-									$courses = \App\Models\Course::all(); // Replace \App\Models\Course with your actual Course model namespace
-									$service = \App\Models\Service::all();
-									$batches = \App\Models\Service::all();
-								@endphp
+                                    $courses = \App\Models\Course::all(); // Replace \App\Models\Course with your actual Course model namespace
+                                    $service = \App\Models\Service::all();
+                                    $batches = \App\Models\Service::all();
+                                @endphp
                                 <!-- DROPDOWN MENU -->
                                 <li class="nl-simple" aria-haspopup="true"><a href="{{ route('home') }}">Home</a>
                                 </li>
@@ -175,11 +175,10 @@
                                         @endforeach
                                         {{-- <li aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li> --}}
 
-
                                     </ul>
                                 </li>
                                 <li class="nl-simple" aria-haspopup="true"><a href="{{ route('batch') }}">Batches</a></li>
-								<li aria-haspopup="true"><a href="#">Services<span class="wsarrow"></span></a>
+                                <li aria-haspopup="true"><a href="#">Services<span class="wsarrow"></span></a>
                                     <ul class="sub-menu">
                                         <li aria-haspopup="true"><a href="{{ route('service') }}">All Services</a></li>
                                         @foreach ($service as $service)
@@ -190,10 +189,9 @@
                                             </li>
                                         @endforeach
 
-
-
                                     </ul>
                                 </li>
+
 
 
 
@@ -220,16 +218,17 @@
                                     <!-- Your button -->
                                     <button type="submit" class="btn btn-primary mt-4" fdprocessedid="ri7lf">Get in Touch</button>
                                 </form> --}}
-                                <li class="nl-simple" aria-haspopup="true">
-                                    <a href="https://nashik.globaleducationconsultancy.in/latest-updates/1"
-                                    class="header-btn btn-primary btn-sm tra-black-hover last-link">Update</a>
-                                </li>
+
+        <li class="nl-simple" aria-haspopup="true">
+            <a href="https://nashik.globaleducationconsultancy.in/latest-updates/1"
+                class="header-btn btn-primary btn-sm tra-black-hover last-link">Update</a>
+        </li>
 
                                 <li class="nl-simple" aria-haspopup="true"><a
                                         href="{{ route('contact.index') }}">Contact us</a></li>
 
                                 <!-- SIMPLE NAVIGATION LINK -->
-                                <li class="nl-simple" aria-haspopup="true"><a href="#"></a></li>
+                                {{-- <li class="nl-simple" aria-haspopup="true"><a href="#"></a></li> --}}
 
 
                                 <!-- LAST NAVIGATION LINK -->
