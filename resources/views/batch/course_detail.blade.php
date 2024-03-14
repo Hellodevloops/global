@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-   
 
-		
+
+
 
 
 
 				<!-- ABOUT-9
 				============================================= -->
 				<section id="about-9" class="wide-60 about-section division">
-					<div class="container">	
+					<div class="container">
 						<div class="row">
 
 
@@ -30,9 +30,9 @@
 
 												<!-- Icon -->
 												<div class="a9-icon grey-color"><span class="flaticon-358-wall-clock-1"></span></div>
-												
+
 												<!-- Text -->
-												<div class="a9-txt"> 
+												<div class="a9-txt">
 													<p class="grey-color txt-400">Duration</p>
 													<p class="blue-color">40 Hours</p>
 												</div>
@@ -46,9 +46,9 @@
 
 												<!-- Icon -->
 												<div class="a9-icon grey-color"><span class="flaticon-151-presentation"></span></div>
-												
+
 												<!-- Text -->
-												<div class="a9-txt"> 
+												<div class="a9-txt">
 													<p class="grey-color txt-400">Assessment</p>
 													<p class="blue-color">Yes</p>
 												</div>
@@ -62,9 +62,9 @@
 
 												<!-- Icon -->
 												<div class="a9-icon grey-color"><span class="flaticon-360-clipboard"></span></div>
-												
+
 												<!-- Text -->
-												<div class="a9-txt"> 
+												<div class="a9-txt">
 													<p class="grey-color txt-400">Certification</p>
 													<p class="blue-color">Yes</p>
 												</div>
@@ -86,9 +86,9 @@
 							<aside id="sidebar" class="col-lg-4">
 
 
-								<!-- SIDEBAR CATEGORIES --> 
+								<!-- SIDEBAR CATEGORIES -->
 								<div class="blog-categories sidebar-div mb-50">
-										
+
 									<!-- Title -->
 									<h5 class="h5-lg">Popular Courses : </h5>
 
@@ -105,9 +105,9 @@
 								</div>
 
 
-								<!-- SIDEBAR COUNTRIES --> 
+								<!-- SIDEBAR COUNTRIES -->
 								{{-- <div class="sidebar-countries sidebar-div mb-50">
-										
+
 									<!-- Title -->
 									<h5 class="h5-lg">Popular Countries: </h5>
 
@@ -129,7 +129,7 @@
 									</ul>
 
 								</div> --}}
-							
+
 
 							</aside>	<!-- END SIDEBAR -->
 
@@ -154,26 +154,26 @@
 
 
 						<!-- SECTION TITLE -->
-						<div class="row">	
-							<div class="col-md-12 section-title center">		
+						<div class="row">
+							<div class="col-md-12 section-title center">
 
 				 				<!-- Title -->
 								<h2 class="h2-xs">Our Most Popular Courses</h2>
 
-								<!-- Text -->	
-								<p class="p-md">Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat, 
+								<!-- Text -->
+								<p class="p-md">Cursus porta, feugiat primis in ultrice ligula risus auctor tempus dolor feugiat,
 								   felis lacinia risus interdum auctor id viverra dolor iaculis luctus placerat and massa
-								</p> 
+								</p>
 
 							</div>
-						</div>	 <!-- END SECTION TITLE -->	
+						</div>	 <!-- END SECTION TITLE -->
 
 
 						<!-- SERVICE BOXES CAROUSEL -->
 						<div class="row">
                             <div class="col-lg-12">
                                 <div class="owl-carousel owl-theme owl-loaded services-carousel">
-                        
+
                                     <!-- Loop through courses -->
                                     @foreach ($courses as $index => $course)
                                         @php
@@ -182,29 +182,29 @@
                                             // Generate the corresponding background class
                                             $bgClass = 'bg-' . $bgClassNumber;
                                         @endphp
-                        
+
                                         <div class="sbox-9 {{ $bgClass }} sbox-9-color">
-                        
+
                                             <!-- Image -->
                                             <img class="img-fluid" src="{{ $course->hero }}" alt="service-image" />
-                        
+
                                             <!-- Text -->
                                             <div class="sbox-9-txt">
-                        
+
                                                 <!-- Title -->
                                                 <h5 class="h5-lg">{{ $course->title }}</h5>
-                        
+
                                                 <!-- Text -->
                                                 <p class="p-sm">{{ $course->description }}</p>
-                        
+
                                                 <!--Link -->
                                                 <a href="{{ route('courses.show', ['course' => $course]) }}">Read More <i class="fas fa-caret-right"></i></a>
-                        
+
                                             </div>
-                        
+
                                         </div>
                                     @endforeach
-                        
+
                                 </div>
                             </div>
                         </div>
@@ -213,11 +213,11 @@
 
 					</div>     <!-- End container -->
 				</section>	<!-- END SERVICES-9 -->
-				
 
 
 
-			
+
+
     <!-- ABOUT-6
        ============================================= -->
 	   <section id="about-6" class="bg-scroll pt-100 about-section division">
@@ -236,7 +236,7 @@
                 <div class="col-lg-6">
                     <div class="about-6-txt pc-20">
                         <!-- Section ID -->
-                        <span class="section-id id-color">Unlock Your Global Potential</span>
+                        <span class="section-id id-color">Unlock Your Global Study Abroad Consultancy Potential</span>
                         <!-- Title -->
                         <h2 class="h2-xs">Explore Quality Education Abroad</h2>
                         <!-- Text -->

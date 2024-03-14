@@ -241,14 +241,14 @@
 
 
                         <!-- Title -->
-                        <h3 class="h3-lg primary-color">About Global </h3>
+                        <h3 class="h3-lg primary-color">About Global Study Abroad Consultancy </h3>
 
                         <!-- Section ID -->
-                        <span class="section-id darkblue-color">Scholarships, Support, Success : Choose Global </span>
+                        <span class="section-id darkblue-color">Scholarships, Support, Success : Choose Global Study Abroad Consultancy </span>
                         <!-- INFO BOX #1 -->
                         <div class="box-list">
                             <div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-                            <p>Founded in 2015, Global Education Consultancy in Nashik is a leading institute for English
+                            <p>Founded in 2015, Global Study Abroad Consultancy in Nashik is a leading institute for English
                                 communication skills development. We offer high-quality training in communicative English,
                                 competitive exam preparation, and effective communication. With years of experience, our
                                 teaching methods cater to the specific needs of every learner. Located on College Road, our
@@ -518,11 +518,11 @@
                 <div class="col-md-12 section-title center">
 
                     <!-- Title -->
-                    <h2 class="h2-xs darkblue-color">What Global Offers?</h2>
+                    <h2 class="h2-xs darkblue-color">What Global Study Abroad Consultancy Offers?</h2>
 
                     <!-- Text -->
                     <p class="p-md">Presents a wide array of enticing opportunities that pave the way for success and
-                        self-discovery. Discover what Global offers and embark on a journey of knowledge, empowerment, and
+                        self-discovery. Discover what Global Study Abroad Consultancy offers and embark on a journey of knowledge, empowerment, and
                         lasting connections.</p>
 
                 </div>
@@ -582,8 +582,7 @@
                     <h2 class="h2-xs">Why Choose Us?</h2>
 
                     <!-- Text -->
-                    <p class="p-md">Unleashing Brilliance: Inspiring Tales of Triumphs from Our Institute's Global
-                        Consultancy Achievers. Expertise for Study Aboard process.
+                    <p class="p-md">Unleashing Brilliance: Inspiring Tales of Triumphs from Our Institute's Global Study Abroad Consultancy Achievers. Expertise for Study Aboard process.
                     </p>
 
                 </div>
@@ -630,7 +629,7 @@
 
                         <!-- Text -->
                         <h5 class="primary-color"><span class="count-element">28</span>+</h5>
-                        <p class="p-md">Global Countries </p>
+                        <p class="p-md">Global Study Abroad Consultancy Countries </p>
 
                     </div>
                 </div>
@@ -673,7 +672,7 @@
                 <div class="col-lg-6">
                     <div class="about-6-txt pc-20">
                         <!-- Section ID -->
-                        <span class="section-id id-color">Unlock Your Global Potential</span>
+                        <span class="section-id id-color">Unlock Your Global Study Abroad Consultancy Potential</span>
                         <!-- Title -->
                         <h2 class="h2-xs">Explore Quality Education Abroad</h2>
                         <!-- Text -->

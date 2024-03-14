@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SITE TITLE -->
-    <title>Global Consltancy - Immigration and Visa Consulting Website Template</title>
+    <title>Global Study Abroad Consultancy - Immigration and Visa Consulting Website Template</title>
 
     <!-- FAVICON AND TOUCH ICONS  -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
@@ -273,7 +273,7 @@
                             <!-- Footer Links -->
                             <ul class="foo-links clearfix">
                                 <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('about') }}">About Global Consltancy</a></li>
+                                <li><a href="{{ route('about') }}">About Global Study Abroad Consultancy</a></li>
 
                                 <li><a href="{{ route('blog') }}">Our Stories</a></li>
                                 <li><a href="{{ asset('institute.pdf') }}">institute Partners</a></li>
@@ -360,7 +360,7 @@
 
                     <!-- FOOTER SOCIALS LINKS -->
                     <div class="col-md-8 col-lg-9 text-right">
-                        <p class="footer-copyright">&copy; Copyright <span>Global Consltancy 2023</span>. All
+                        <p class="footer-copyright">&copy; Copyright <span>Global Study Abroad Consultancy 2023</span>. All
                             Rights Reserved</p>
                         <!-- <p class="p-sm"><a href="#">Privacy Policy</a></p>
      <p class="p-sm"><a href="#">Terms & Conditions</a></p>

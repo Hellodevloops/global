@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-        
+
         <!--page header section start-->
         <section class="related-blog-list ptb-120 bg-light-subtle">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-12 col-md-12">
                         <div class="section-heading">
-                            <h4 class="h5 text-primary mt-3">Internship Gateway: Unlock Your Global Potential!</h4>
+                            <h4 class="h5 text-primary mt-3">Internship Gateway: Unlock Your Global Study Abroad Consultancy Potential!</h4>
                             <h3>Empowering Migration: Training for Success in the USA and Canada</h3>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                       
+
                     </div>
                 </div>
             </div>
@@ -85,10 +85,10 @@
         <!--page header section end-->
         <!-- start -->
         <div class="style-guide">
-           
+
 
             <!--cat section start-->
-           
+
             <!--cat section end-->
 
         </div>
@@ -105,7 +105,7 @@
                         <div class="feature-content-wrap">
                             <div class="section-heading">
                             <!-- <i class="fas fa-bolt fa-2x text-white"></i> -->
-                                <h2>Global Networking Opportunities</h2>
+                                <h2>Global Study Abroad Consultancy Networking Opportunities</h2>
                                 <p>International intern migration allows aspiring professionals to gain valuable cross-cultural experiences and exposure to different work environments. It promotes cultural exchange, broadens perspectives, and fosters global understanding, which can enhance their professional and personal development.</p>
                             </div>
                             <ul class="list-unstyled mb-0">
@@ -128,7 +128,7 @@
                                         <p>Intern migration facilitates the exchange of knowledge and skills between countries.
                                         </p>
                                     </div>
-                                </li> 
+                                </li>
                                 <li class="d-flex align-items-start mb-4 mb-lg-0">
                                 <div class="icon-box bg-primary rounded me-4">
                            <i class="fas fa-users text-secondary"></i>
@@ -153,7 +153,7 @@
 <!-- sec end -->
 
 <!-- about service end -->
-        <!--features grid section start--> 
+        <!--features grid section start-->
         <section class="integration-details ptb-120">
                 <div class="container">
                     <div class="row justify-content-between">
@@ -165,7 +165,7 @@
                                 <div class="integration-feature-info mt-5">
                                     <h3 class="h3">Benefits of  this Migration</h3>
                                     <ul class="content-list list-unstyled">
-                                       <h4> <li>Enhanced Global Perspective
+                                       <h4> <li>Enhanced Global Study Abroad Consultancy Perspective
                                         </li></h4>
                                         <h4> <li>Cultural Competence and Adaptability</li></h4>
                                         <h4> <li>Professional Development
@@ -183,10 +183,10 @@
                                         </li></h4>
                                     </ul>
                                 </div>
-                               
 
-                            
-                                
+
+
+
                             </div>
                             <a href="{{route('contact.index')}}" class="read-more-link text-decoration-none mt-4 d-block">Contact Us
                                                 <i class="fas fa-arrow-right ms-2"></i></a>
@@ -214,7 +214,7 @@
             </div>
             <div class="col-lg-7 col-md-12 mt-4">
                 <div class="feature-content-wrap">
- 
+
                 <ul class="list-unstyled mb-0">
                     <li class="d-flex align-items-start mb-4">
                         <div class="icon-box bg-secondary rounded me-4">
@@ -230,7 +230,7 @@
                     <div class="icon-box bg-secondary rounded me-4">
                     <i class="fas fa-thumbs-up text-primary"></i>
                         </div>
-                       
+
                         <div class="icon-content">
                             <h3 class="h5">Skill Development</h3>
                             <p>comprehensive training programs and the opportunity to work on challenging projects.
@@ -240,7 +240,7 @@
                     <div class="icon-box bg-secondary rounded me-4">
                     <i class="fas fa-lock text-primary"></i>
                         </div>
-                       
+
                         <div class="icon-content">
                             <h3 class="h5">Career Advancement</h3>
                             <p> The prospect of securing a job in a foreign country like the USA or Canada can be a strong incentive for talented individuals seeking international career opportunities.
@@ -250,7 +250,7 @@
                 </ul>
             </div>
         </div>
-        
+
     </div>
 </div>
 </section>
@@ -365,7 +365,7 @@
                 </div>
             </section>
 <!-- faq end -->
-  
+
 <!-- integrate companies  -->
 <section class="customer-review-tab ptb-120 bg-light-subtle position-relative z-2">
                 <div class="container">

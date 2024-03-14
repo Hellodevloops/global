@@ -21,7 +21,7 @@
 			<!-- Text #2 -->
 			<div class="box-list">
 				<div class="box-list-icon"><i class="fas fa-genderless"></i></div>
-				<p>At Global Education Consultancy, we understand the diverse needs of our students, whether they are preparing for competitive exams or seeking personal and professional development. Our experienced team of instructors is here to guide and empower you, helping you succeed in exams and in life.</p>
+				<p>At Global Study Abroad Consultancy, we understand the diverse needs of our students, whether they are preparing for competitive exams or seeking personal and professional development. Our experienced team of instructors is here to guide and empower you, helping you succeed in exams and in life.</p>
 			</div>
 
 			<!-- Button -->
@@ -55,9 +55,9 @@
 				<div class="row">
 					<div class="col-md-12 section-title center">
 						<!-- Title -->
-						<h2 class="h2-xs darkblue-color">What Global Services Offer</h2>
+						<h2 class="h2-xs darkblue-color">What Global Study Abroad Consultancy Services Offer</h2>
 						<!-- Text -->
-						<p class="p-md">Global offers a wide array of enticing opportunities that pave the way for success and self-discovery. Discover what Global offers and embark on a journey of knowledge, empowerment, and lasting connections.</p>
+						<p class="p-md">Global Study Abroad Consultancy offers a wide array of enticing opportunities that pave the way for success and self-discovery. Discover what Global Study Abroad Consultancy offers and embark on a journey of knowledge, empowerment, and lasting connections.</p>
 					</div>
 				</div>
 
@@ -202,7 +202,7 @@
 
 							<!-- Text -->
 							<h5 class="yellow-color"><span class="count-element">28</span>+</h5>
-							<p>Global Countries</p>
+							<p>Global Study Abroad Consultancy Countries</p>
 
 						</div>
 					</div>

@@ -208,7 +208,7 @@
             <div class="col-lg-6">
                 <div class="about-6-txt pc-20">
                     <!-- Section ID -->
-                    <span class="section-id id-color">Unlock Your Global Potential</span>
+                    <span class="section-id id-color">Unlock Your Global Study Abroad Consultancy Potential</span>
                     <!-- Title -->
                     <h2 class="h2-xs">Explore Quality Education Abroad</h2>
                     <!-- Text -->
