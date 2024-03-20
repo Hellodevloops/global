@@ -24,6 +24,8 @@ class Post extends Model
         'title',
         'description',
         'keyword',
+        'metatitle',
+        'metadescription',
         'body',
         'author',
         'hero',

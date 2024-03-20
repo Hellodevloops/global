@@ -112,6 +112,14 @@ class CourseEditScreen extends Screen
                     ->title('Keyword')
                    ,
 
+                   Input::make('course.metatitle')
+                   ->title('Metatitle')
+                  ,
+
+                  Input::make('course.metadescription')
+                  ->title('Metadescription')
+                 ,
+
                 Relation::make('course.author')
                     ->title('Author')
                     ->required()

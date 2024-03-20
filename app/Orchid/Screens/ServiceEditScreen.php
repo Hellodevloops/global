@@ -140,6 +140,13 @@ class ServiceEditScreen extends Screen
                     ->title('Keyword')
                    ,
 
+                   Input::make('service.metatitle')
+                   ->title('Metatitle')
+                  ,
+
+                  Input::make('service.metadescription')
+                  ->title('Metadescription')
+                 ,
 
                 Relation::make('service.author')
                     ->title('Author')

@@ -120,6 +120,14 @@ class PostEditScreen extends Screen
                     ->title('Keyword')
                    ,
 
+                   Input::make('post.metatitle')
+                   ->title('Metatitle')
+                  ,
+
+                  Input::make('post.metadescription')
+                  ->title('Metadescription')
+                 ,
+
                 Relation::make('post.author')
                     ->title('Author')
                     ->required()

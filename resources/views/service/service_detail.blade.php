@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', $service->title )
-@section('meta_description', $service->description )
+@section('title', $service->metatitle )
+@section('meta_description', $service->metadescription )
 @section('meta_keywords', $service->keyword)
 @section('content')
 
