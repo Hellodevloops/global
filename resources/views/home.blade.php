@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Global Education Consultancy in Nashik | Join Best IELTS Course!')
+@section('meta_description', 'Propel your education to new heights with Global Education Consultancy in Nashik City. Enroll in the top-rated IELTS Course.')
+@section('meta_keywords', 'Best IELTS Course')
 @section('content')
 
     <!-- HERO-2

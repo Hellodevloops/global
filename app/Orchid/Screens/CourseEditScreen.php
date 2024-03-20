@@ -38,7 +38,7 @@ class CourseEditScreen extends Screen
             'course' => $course ?? new Course(),
         ];
     }
-    
+
 
     /**
      * The name is displayed on the user's screen and in the headers
@@ -100,13 +100,17 @@ class CourseEditScreen extends Screen
                     ->targetRelativeUrl()
                     ->title('Large web banner image, generally in the front and center')
                     ->width(600)
-                    ->height(450),  
-    
+                    ->height(450),
+
                 TextArea::make('course.description')
                     ->title('Description')
                     ->rows(3)
                     ->maxlength(200)
                     ->placeholder('Brief description for preview'),
+
+                    Input::make('course.keyword')
+                    ->title('Keyword')
+                   ,
 
                 Relation::make('course.author')
                     ->title('Author')
@@ -120,7 +124,7 @@ class CourseEditScreen extends Screen
                     //     ->title('Attachment')
                     //     ->maxFiles(1)
                     //     ->acceptedFiles('image/*'),
-      
+
 
             ])
         ];
@@ -134,15 +138,15 @@ class CourseEditScreen extends Screen
     public function createOrUpdate(Course $course, Request $request)
     {
         $course->fill($request->get('course'))->save();
-    
+
      // Store the attachments
 $attachments = $request->input('course.attachment');
 // $course->attachments()->attach($attachments);
 
 
-    
+
         Alert::info('You have successfully created or updated the course.');
-    
+
         return redirect()->route('platform.course.list');
     }
 

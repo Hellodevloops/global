@@ -36,7 +36,7 @@ class ServiceEditScreen extends Screen
     {
         $service->load('attachment');
         return [
-          
+
             'service' => $service
 
         ];
@@ -108,7 +108,7 @@ class ServiceEditScreen extends Screen
 
     public function layout(): array
     {
-        
+
        $iconClasses = $this->getIconClasses();
 
         return [
@@ -129,12 +129,17 @@ class ServiceEditScreen extends Screen
                     ->options($iconClasses)
                     ->help('Select an icon class from the dropdown.'),
 
-                
+
                 TextArea::make('service.description')
                     ->title('Description')
                     ->rows(3)
                     ->maxlength(200)
                     ->placeholder('Brief description for preview'),
+
+                    Input::make('service.keyword')
+                    ->title('Keyword')
+                   ,
+
 
                 Relation::make('service.author')
                     ->title('Author')
@@ -161,13 +166,13 @@ class ServiceEditScreen extends Screen
 public function createOrUpdate(Service $service, Request $request)
 {
     $serviceData = $request->get('service');
-    
+
     // Remove the dot prefix from the icon class name
     $serviceData['icon_class'] = ltrim($serviceData['icon_class'], '.');
 
     $service->fill($serviceData)->save();
 
-   
+
     // Store the attachments (adjust this part based on your requirements)
     $attachments = $request->input('service.attachment');
     // Attachments logic goes here

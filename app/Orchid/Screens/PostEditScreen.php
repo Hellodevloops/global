@@ -37,7 +37,7 @@ class PostEditScreen extends Screen
             'post' => $post ?? new Post(),
         ];
     }
-    
+
 
     /**
      * The name is displayed on the user's screen and in the headers
@@ -108,13 +108,17 @@ class PostEditScreen extends Screen
                     ->targetRelativeUrl()
                     ->title('Large web banner image, generally in the front and center')
                     ->width(600)
-                    ->height(400),  
-    
+                    ->height(400),
+
                 TextArea::make('post.description')
                     ->title('Description')
                     ->rows(3)
                     ->maxlength(200)
                     ->placeholder('Brief description for preview'),
+
+                    Input::make('post.keyword')
+                    ->title('Keyword')
+                   ,
 
                 Relation::make('post.author')
                     ->title('Author')
@@ -128,7 +132,7 @@ class PostEditScreen extends Screen
                     //     ->title('Attachment')
                     //     ->maxFiles(1)
                     //     ->acceptedFiles('image/*'),
-      
+
 
             ])
         ];
@@ -142,15 +146,15 @@ class PostEditScreen extends Screen
     public function createOrUpdate(Post $post, Request $request)
     {
         $post->fill($request->get('post'))->save();
-    
+
      // Store the attachments
 $attachments = $request->input('post.attachment');
 // $post->attachments()->attach($attachments);
 
 
-    
+
         Alert::info('You have successfully created or updated the post.');
-    
+
         return redirect()->route('platform.post.list');
     }
 

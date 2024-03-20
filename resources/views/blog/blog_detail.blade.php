@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', $post->title )
+@section('meta_description', $post->description )
+@section('meta_keywords', $post->keyword)
 @section('content')
 
 

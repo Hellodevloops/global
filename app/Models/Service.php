@@ -25,6 +25,7 @@ class Service extends Model
         'title',
 
         'description',
+        'keyword',
         'body',
         'author',
         'hero',

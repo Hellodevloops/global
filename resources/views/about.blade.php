@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'About GEC | Study Abroad Consultant in Nashik')
+@section('meta_description', 'Discover the key to international success with our expert Study Abroad Consultant in Nashik. Tailored guidance for a brighter future awaits! Connect today. ')
+@section('meta_keywords', 'Study Abroad Consultant in Nashik')
 @section('content')
 
     <!-- ABOUT-2

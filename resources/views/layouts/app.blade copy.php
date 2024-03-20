@@ -7,12 +7,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="Jthemes" />
-    <title>@yield('title', 'Default Title')</title>
-    <meta name="description" content="@yield('meta_description', 'Global Consltancy - Immigration and Visa Consulting Website ')" />
+    <meta name="description" content="Global Consltancy - Immigration and Visa Consulting Website Template" />
     <meta name="keywords"
-        content="@yield('meta_keywords', 'Responsive, Jthemes, One Page, Landing, Business, Coaching, Consulting, Creative, Immigration, Visa')" />
+        content="Responsive, Jthemes, One Page, Landing, Business, Coaching, Consulting, Creative, Immigration, Visa">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
+    <!-- SITE TITLE -->
+    <title>Global Study Abroad Consultancy - Immigration and Visa Consulting Website Template</title>
+
     <!-- FAVICON AND TOUCH ICONS  -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', $course->title )
+@section('meta_description', $course->description )
+@section('meta_keywords', $course->keyword)
 @section('content')
     <!-- ABOUT-9
             ============================================= -->
