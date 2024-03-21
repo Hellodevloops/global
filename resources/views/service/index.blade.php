@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Our Services | Best IELTS Training Classes in Nashik')
+@section('meta_description', 'Boost your IELTS scores with Nashiks leading classes. Dive into comprehensive training and emerge as a language maestro. Enlist now! ')
+@section('meta_keywords', 'Best IELTS Training Classes')
 @section('content')
    {{-- banner strats --}}
    <section id="about-4" class="bg-lightgrey bg-tra-city pt-100 about-section division">

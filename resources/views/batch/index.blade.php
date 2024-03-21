@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Choose Your Convenient Batch To Learn Foreign Languages in Nashik')
+@section('meta_description', 'Master Foreign Languages Efficiently in our different course batches. Accelerate your linguistic journey with engaging content and expert guidance.')
+@section('meta_keywords', 'Batch For Foreign Language Course')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

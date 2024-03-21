@@ -1,7 +1,10 @@
 @extends('layouts.app')
+@section('title', 'Contact | Best IELTS Consultancy In Nashik | GEC')
+@section('meta_description', 'Achieve IELTS Excellence! Nashiks Top Consultancy Awaits. Tailored Strategies for Your Academic Triumph! Contact Us.')
+@section('meta_keywords', 'Best IELTS Consultancy In Nashik')
 @section('content')
 
-       
+
 				<!-- CONTACTS-4
 				============================================= -->
 				<section id="contacts-4" class="bg-lightgrey wide-80 contacts-section division">
@@ -9,17 +12,17 @@
 
 
 						<!-- SECTION TITLE -->
-						<div class="row">	
-							<div class="col-md-12 section-title center">		
+						<div class="row">
+							<div class="col-md-12 section-title center">
 
 				 				<!-- Title -->
 								<h2 class="h2-xs">Have Questions? Get in Touch</h2>
 
-								<!-- Text -->	
+								<!-- Text -->
 								<p class="p-md">If you have any questions or need further assistance,<br> please feel free to reach out to us. We are here to help!</p>
 
 							</div>
-						</div>	 <!-- END SECTION TITLE -->	
+						</div>	 <!-- END SECTION TITLE -->
 
 
 					 	<div class="row">
@@ -30,7 +33,7 @@
 
 									<!-- LOCATION -->
 									<div class="contact-box icon-xs clearfix mb-25">
-										<!-- Icon -->	
+										<!-- Icon -->
 										<div class="contact-box-icon"><span class="flaticon-240-placeholder"></span></div>
 										<!-- Text -->
 										<div class="contact-box-txt">
@@ -38,10 +41,10 @@
 											<p class="grey-color">Our Location</p>
 										</div>
 									</div>
-								
+
 									<!-- PHONES -->
 									<div class="contact-box icon-xs clearfix mb-25">
-										<!-- Icon -->	
+										<!-- Icon -->
 										<div class="contact-box-icon"><span class="flaticon-172-telephone-1"></span></div>
 										<!-- Text -->
 										<div class="contact-box-txt">
@@ -50,10 +53,10 @@
 											<p class="grey-color">Let's Talk</p>
 										</div>
 									</div>
-								
+
 									<!-- EMAIL -->
 									<div class="contact-box icon-xs clearfix">
-										<!-- Icon -->	
+										<!-- Icon -->
 										<div class="contact-box-icon"><span class="flaticon-235-mail"></span></div>
 										<!-- Text -->
 										<div class="contact-box-txt">
@@ -62,22 +65,22 @@
 											<p class="grey-color">Drop a Line</p>
 										</div>
 									</div>
-								
+
 								</div>
-								
+
 							</div>
 
 
-							<!-- CONTACT FORM -->	
+							<!-- CONTACT FORM -->
 					 		<div class="col-lg-7">
                                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
+
                                 <div class="register-wrap p-5 bg-white shadow rounded-custom position-relative aos-init aos-animate"
                                     data-aos="fade-up" data-aos-delay="150">
-                
+
                                     <form class="cons-contact-form" id="contactForm" method="POST"
                                         action="{{ route('contact.store') }}">
-                
+
                                         @csrf
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -138,15 +141,15 @@
                                             {{ session('success') }}
                                         </div>
                                     @endif --}}
-                
+
                                     <!-- Add this script at the end of your Blade template or in a separate JS file -->
                                     <script>
                                         $(document).ready(function() {
                                             $('#contactForm').submit(function(event) {
                                                 event.preventDefault(); // Prevent the default form submission
-                
+
                                                 var formData = $(this).serialize(); // Serialize the form data
-                
+
                                                 // Send the AJAX request
                                                 $.ajax({
                                                     url: "{{ route('contact.store') }}", // The Laravel route to handle the form submission
@@ -165,10 +168,10 @@
                                             });
                                         });
                                     </script>
-                
-                
+
+
                                 </div>
-					 		</div>	 <!-- END CONTACT FORM -->	 	
+					 		</div>	 <!-- END CONTACT FORM -->
 
 
 					 	</div>    <!-- End row -->

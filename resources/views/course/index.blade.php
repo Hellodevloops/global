@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Learn Best Foreign Language Courses in nashik')
+@section('meta_description', 'Gateway to Global Opportunities! Master Foreign Languages in Nashik for abroad study Triumph. Open doors to international success.')
+@section('meta_keywords', 'Foreign Language Courses in nashik')
 @section('content')
 
 

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Blog | Global Education Consultancy in Nashik')
+@section('meta_description', 'Unlock doors to world-class education with our consultancy services in Nashik. Let us guide you to the best universities abroad. Start your journey today!')
+@section('meta_keywords', 'Blog | Global Education Consultancy in Nashik')
 @section('content')
     <!-- BLOG PAGE CONTENT
         ============================================= -->
