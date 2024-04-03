@@ -12,10 +12,10 @@
     <meta name="keywords"
         content="@yield('meta_keywords', 'Responsive, Jthemes, One Page, Landing, Business, Coaching, Consulting, Creative, Immigration, Visa')" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- FAVICON AND TOUCH ICONS  -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo1.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo1.png') }}" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
@@ -160,12 +160,12 @@
                                 <!-- DROPDOWN MENU -->
                                 <li class="nl-simple" aria-haspopup="true">
                                     <div class="desktoplogo">
-                                        <a href="#hero-1" class="logo-black">
+                                        <a href="{{ route('home') }}" class="logo-black">
                                             <img src="{{ asset('images/logo.png') }}" width="150" height="70" alt="header-logo">
                                         </a>
                                     </div>
                                     <div class="desktoplogo">
-                                        <a href="#hero-1" class="logo-white">
+                                        <a href="{{ route('home') }}" class="logo-white">
                                             <img src="{{ asset('images/logo.png') }}" width="150" height="70" alt="header-logo">
                                         </a>
                                     </div>

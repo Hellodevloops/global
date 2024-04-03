@@ -104,11 +104,11 @@ class PostEditScreen extends Screen
                     ->title('Select Area to display')
                     ->help('Where You want to display this Image'),
 
-                    Cropper::make('post.hero')
-                    ->targetRelativeUrl()
-                    ->title('Large web banner image, generally in the front and center')
-                    ->width(600)
-                    ->height(400),
+                        Cropper::make('post.hero')
+                        ->targetRelativeUrl()
+                        ->title('Large web banner image, generally in the front and center')
+                        ->width(600)
+                        ->height(400),
 
                 TextArea::make('post.description')
                     ->title('Description')
@@ -143,6 +143,7 @@ class PostEditScreen extends Screen
 
 
             ])
+
         ];
     }
 
