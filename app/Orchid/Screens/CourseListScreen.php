@@ -16,7 +16,7 @@ class CourseListScreen extends Screen
     public function query(): array
     {
         return [
-            'courses' => Course::filters()->defaultSort('id')->paginate(),
+            'courses' => Course::filters()->defaultSort('id','desc')->paginate(),
             'recentcourses' => Course::latest()->take(5)->get(),
         ];
     }

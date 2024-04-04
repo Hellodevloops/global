@@ -16,7 +16,7 @@ class PostListScreen extends Screen
     public function query(): array
     {
         return [
-            'posts' => Post::filters()->defaultSort('id')->paginate(),
+            'posts' => Post::filters()->defaultSort('id','desc')->paginate(),
             'recentPosts' => Post::latest()->take(5)->get(),
         ];
     }

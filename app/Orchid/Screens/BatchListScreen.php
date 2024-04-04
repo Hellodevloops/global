@@ -18,7 +18,7 @@ class BatchListScreen extends Screen
     public function query(): array
     {
         return [
-            'batchs' => Batch::filters()->defaultSort('id')->paginate(),
+            'batchs' => Batch::filters()->defaultSort('id','desc')->paginate(),
             'recentbatchs' => Batch::latest()->take(5)->get(),
         ];
     }
