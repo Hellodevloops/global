@@ -358,12 +358,9 @@
 
                     <!-- FOOTER SOCIALS LINKS -->
                     <div class="col-md-8 col-lg-9 text-right">
-                        <p class="footer-copyright">&copy; Copyright <span>Global Study Abroad Consultancy 2023</span>. All
-                            Rights Reserved</p>
-                        <!-- <p class="p-sm"><a href="#">Privacy Policy</a></p>
-     <p class="p-sm"><a href="#">Terms & Conditions</a></p>
-     <p class="p-sm"><a href="#">Cookies</a></p> -->
+                        <p class="footer-copyright">© Copyright <span><a href="https://www.socialages.com"> Developed By Socialages - Digital Marketing Agency</a></span>. All Rights Reserved.</p>
                     </div>
+
 
 
                 </div>
