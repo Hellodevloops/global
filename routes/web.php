@@ -93,7 +93,15 @@ Route::get('/resume_parser', function () {
 // })->name('contact');
 
 // Route::resource('contact', [ContactController::class, 'store'])->name('contact.submit');
-Route::resource('contact', ContactController::class);
+// below main without recaptcha
+// Route::resource('contact', ContactController::class);
+// with recaptcha
+
+Route::get('contact', [ContactController::class, 'index']);
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+
+
 // end
 // Route for listing all posts
 // previous

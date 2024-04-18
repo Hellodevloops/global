@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Rules\ReCaptcha;
 
 class ContactController extends Controller
 {
@@ -33,35 +34,96 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // main
+    // public function store(Request $request)
+    //     {
+    //         $validatedData = $request->validate([
+    //             'name' => 'required|string|max:255',
+    //             'email' => 'required|email|max:255',
+    //             'phone' => 'nullable|string|max:20',
+    //             'subject' => 'nullable|string|max:255',
+    //             'message' => 'nullable|string',
+    //         ]);
+
+    //         try {
+    //             // save data to database
+    //             $contact = new Contact();
+    //             $contact->name = $validatedData['name'];
+    //             $contact->email = $validatedData['email'];
+    //             $contact->phone = $validatedData['phone'];
+    //             $contact->subject = $validatedData['subject'];
+    //             $contact->message = $validatedData['message'];
+    //             $contact->save();
+
+    //             // redirect to success page with success message
+    //             return back()->with('success', 'Thank you for contacting us!');
+    //         } catch (\Exception $e) {
+    //             // redirect back with error message
+    //             return back()->with('error', 'Error: ' . $e->getMessage());
+    //         }
+    //     }
+
+        // recaptcha try first with cpgt
     public function store(Request $request)
-        {
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|email|max:255',
-                'phone' => 'nullable|string|max:20',
-                'subject' => 'nullable|string|max:255',
-                'message' => 'nullable|string',
-            ]);
+{
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'nullable|string|max:20',
+        'subject' => 'nullable|string|max:255',
+        'message' => 'nullable|string',
+        'g-recaptcha-response' => ['required', new ReCaptcha]
+    ]);
 
-            try {
-                // save data to database
-                $contact = new Contact();
-                $contact->name = $validatedData['name'];
-                $contact->email = $validatedData['email'];
-                $contact->phone = $validatedData['phone'];
-                $contact->subject = $validatedData['subject'];
-                $contact->message = $validatedData['message'];
-                $contact->save();
 
-                // redirect to success page with success message
-                return back()->with('success', 'Thank you for contacting us!');
-            } catch (\Exception $e) {
-                // redirect back with error message
-                return back()->with('error', 'Error: ' . $e->getMessage());
-            }
-        }
+    try {
+        // Save data to database
+        $contact = new Contact();
+        $contact->name = $validatedData['name'];
+        $contact->email = $validatedData['email'];
+        $contact->phone = $validatedData['phone'];
+        $contact->subject = $validatedData['subject'];
+        $contact->message = $validatedData['message'];
+        $contact->save();
 
-    
+        // Redirect to success page with success message
+        return back()->with('success', 'Thank you for contacting us!');
+    } catch (\Exception $e) {
+        // Redirect back with error message
+        return back()->with('error', 'Error: ' . $e->getMessage());
+    }
+}
+
+// try from itsolution doc
+
+/**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|email',
+    //         'phone' => 'required|digits:10|numeric',
+    //         'subject' => 'required',
+    //         'message' => 'required',
+    //         'g-recaptcha-response' => ['required', new ReCaptcha]
+    //     ]);
+
+    //     $input = $request->all();
+
+    //     /*------------------------------------------
+    //     --------------------------------------------
+    //     Write Code for Store into Database
+    //     --------------------------------------------
+    //     --------------------------------------------*/
+    //     dd($input);
+
+    //     return redirect()->back()->with(['success' => 'Contact Form Submit Successfully']);
+    // }
+
 
     /**
      * Display the specified resource.
