@@ -9,18 +9,22 @@
     <meta name="author" content="Jthemes" />
     <title>@yield('title', 'Default Title')</title>
     <meta name="description" content="@yield('meta_description', 'Global Consltancy - Immigration and Visa Consulting Website ')" />
-    <meta name="keywords"
-        content="@yield('meta_keywords', 'Responsive, Jthemes, One Page, Landing, Business, Coaching, Consulting, Creative, Immigration, Visa')" />
+    <meta name="keywords" content="@yield('meta_keywords', 'Responsive, Jthemes, One Page, Landing, Business, Coaching, Consulting, Creative, Immigration, Visa')" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FAVICON AND TOUCH ICONS  -->
-    <link rel="shortcut icon" href="{{ asset('images/logo1.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('images/logo1.ico') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="https://www.globaleducationconsultancy.in/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.globaleducationconsultancy.in/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/apple-touch-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/apple-touch-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/apple-touch-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="icon" href="apple-touch-icon.html" type="image/x-icon">
+    {{-- new updates links --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
@@ -59,7 +63,8 @@
 
     <!-- RESPONSIVE CSS -->
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
 
@@ -122,7 +127,8 @@
                         <!-- Contacts -->
                         <div class="headertopright header-contacts">
                             <!-- <a href="tel:123456789" class="callusbtn txt-400"><i class="fas fa-phone"></i>+91 8048040479</a> -->
-                            <a href="tel:9371044425" class="callusbtn b-right txt-400">&#8194;+91 9371044425 ,+91 9371844425</a>
+                            <a href="tel:9371044425" class="callusbtn b-right txt-400">&#8194;+91 9371044425 ,+91
+                                9371844425</a>
                             <a href="mailto:mailinfo.gec@gmail.com" class="txt-400"><i
                                     class="far fa-envelope-open"></i>mailinfo.gec@gmail.com </a>
                         </div>
@@ -147,7 +153,8 @@
 
 
                         <!-- MAIN MENU -->
-                        <nav class="wsmenu clearfix blue-header" style="display: flex; justify-content: space-between;">
+                        <nav class="wsmenu clearfix blue-header"
+                            style="display: flex; justify-content: space-between;">
                             <ul class="wsmenu-list" style="display: flex; list-style: none; margin: 0; padding: 0;">
 
                                 @php
@@ -161,36 +168,46 @@
                                 <li class="nl-simple" aria-haspopup="true">
                                     <div class="desktoplogo">
                                         <a href="{{ route('home') }}" class="logo-black">
-                                            <img src="{{ asset('images/logo.png') }}" width="150" height="70" alt="header-logo">
+                                            <img src="{{ asset('images/logo.png') }}" width="150" height="70"
+                                                alt="header-logo">
                                         </a>
                                     </div>
                                     <div class="desktoplogo">
                                         <a href="{{ route('home') }}" class="logo-white">
-                                            <img src="{{ asset('images/logo.png') }}" width="150" height="70" alt="header-logo">
+                                            <img src="{{ asset('images/logo.png') }}" width="150" height="70"
+                                                alt="header-logo">
                                         </a>
                                     </div>
                                 </li>
-                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ route('home') }}" style="font-size: inherit;">Home</a></li>
-                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px; margin-left: 15px;"><a href="{{ route('about') }}" style="font-size: inherit;">About us</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a
+                                        href="{{ route('home') }}" style="font-size: inherit;">Home</a></li>
+                                <li class="nl-simple" aria-haspopup="true"
+                                    style="font-size: 12px; margin-left: 15px;"><a href="{{ route('about') }}"
+                                        style="font-size: inherit;">About us</a></li>
                                 <li aria-haspopup="true" style="font-size: 12px;">
-                                    <a href="#" style="font-size: inherit;">Courses<span class="wsarrow"></span></a>
+                                    <a href="#" style="font-size: inherit;">Courses<span
+                                            class="wsarrow"></span></a>
                                     <ul class="sub-menu" style="font-size: inherit;">
                                         <li aria-haspopup="true"><a href="{{ route('course') }}">All Courses</a></li>
                                         @foreach ($courses as $course)
                                             <li aria-haspopup="true">
-                                                <a href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
+                                                <a
+                                                    href="{{ route('courses.show', ['slug' => $course->slug]) }}">{{ $course->title }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
                                 </li>
                                 <li aria-haspopup="true" style="font-size: 12px;">
-                                    <a href="#" style="font-size: inherit;">Services<span class="wsarrow"></span></a>
+                                    <a href="#" style="font-size: inherit;">Services<span
+                                            class="wsarrow"></span></a>
                                     <ul class="sub-menu" style="font-size: inherit;">
-                                        <li aria-haspopup="true"><a href="{{ route('service') }}">All Services</a></li>
-                                        @foreach ($service as $service)
-                                        <li aria-haspopup="true">
-                                            <a href="{{ route('services.show', ['slug' => $service->slug]) }}">{{ $service->title }}</a>
+                                        <li aria-haspopup="true"><a href="{{ route('service') }}">All Services</a>
                                         </li>
+                                        @foreach ($service as $service)
+                                            <li aria-haspopup="true">
+                                                <a
+                                                    href="{{ route('services.show', ['slug' => $service->slug]) }}">{{ $service->title }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </li>
@@ -205,10 +222,18 @@
                                         @endforeach
                                     </ul>
                                 </li> --}}
-                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ route('blog') }}" style="font-size: inherit;">Our Stories</a></li>
-                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="https://nashik.globaleducationconsultancy.in/latest-updates/1" style="font-size: inherit;">Update</a></li>
-                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ route('contact.index') }}" style="font-size: inherit;">Contact us</a></li>
-                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a href="{{ asset('institute.pdf') }}" class="header-btn btn-primary btn-sm tra-black-hover last-link" style="font-size: inherit;">Our Partners</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a
+                                        href="{{ route('blog') }}" style="font-size: inherit;">Our Stories</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a
+                                        href="https://nashik.globaleducationconsultancy.in/latest-updates/1"
+                                        style="font-size: inherit;">Update</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a
+                                        href="{{ route('contact.index') }}" style="font-size: inherit;">Contact
+                                        us</a></li>
+                                <li class="nl-simple" aria-haspopup="true" style="font-size: 12px;"><a
+                                        href="{{ asset('institute.pdf') }}"
+                                        class="header-btn btn-primary btn-sm tra-black-hover last-link"
+                                        style="font-size: inherit;">Our Partners</a></li>
 
                             </ul>
                         </nav>
@@ -250,7 +275,8 @@
                             <p class="p-sm mt-20">Phone: 9371044425, 9371844425</p>
 
                             <!-- Email -->
-                            <a href="mailto:mailinfo.gec@gmail.com">mailinfo.gec@gmail.com  , mailinfo.gec1@gmail.com</a>
+                            <a href="mailto:mailinfo.gec@gmail.com">mailinfo.gec@gmail.com ,
+                                mailinfo.gec1@gmail.com</a>
 
                             <!-- Working Hours -->
                             <p class="p-sm mt-20">Mon-Fri: 9:00AM - 6:30PM</p>
@@ -358,7 +384,9 @@
 
                     <!-- FOOTER SOCIALS LINKS -->
                     <div class="col-md-8 col-lg-9 text-right">
-                        <p class="footer-copyright">© Copyright <span><a href="https://www.socialages.com"> Developed By Socialages - Digital Marketing Agency</a></span>. All Rights Reserved.</p>
+                        <p class="footer-copyright">© Copyright <span><a href="https://www.socialages.com">
+                                    Developed By Socialages - Digital Marketing Agency</a></span>. All Rights
+                            Reserved.</p>
                     </div>
 
 
@@ -430,27 +458,27 @@
 
 <!-- <div id="stlChanger">
 <div class="blockChanger bgChanger">
-        <a href="#" class="chBut icon-xs"><span class="flaticon-292-gear"></span></a>
-            <div class="chBody">
+    <a href="#" class="chBut icon-xs"><span class="flaticon-292-gear"></span></a>
+        <div class="chBody">
 
-            <div class="stBlock text-center" style="margin: 30px 20px 20px 16px;">
-  <p>Color Scheme</p>
-  <div class="stBgs">
-   <a href="javascript:chooseStyle('aqua-theme', 60)"><img src="{{ asset('images/color-scheme/aqua.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('salmon-theme', 60)"><img src="{{ asset('images/color-scheme/salmon.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('blue-theme', 60)"><img src="{{ asset('images/color-scheme/blue.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('red-theme', 60)"><img src="{{ asset('images/color-scheme/red.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('olive-theme', 60)"><img src="{{ asset('images/color-scheme/olive.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('darkred-theme', 60)"><img src="{{ asset('images/color-scheme/darkred.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('teal-theme', 60)"><img src="{{ asset('images/color-scheme/teal.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('yellow-theme', 60)"><img src="{{ asset('images/color-scheme/yellow.png') }}" width="50" height="50" alt="" /></a>
-   <a href="javascript:chooseStyle('green-theme', 60)"><img src="{{ asset('images/color-scheme/green.png') }}" width="50" height="50" alt="" /></a>
-  </div>
- </div>
+        <div class="stBlock text-center" style="margin: 30px 20px 20px 16px;">
+<p>Color Scheme</p>
+<div class="stBgs">
+<a href="javascript:chooseStyle('aqua-theme', 60)"><img src="{{ asset('images/color-scheme/aqua.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('salmon-theme', 60)"><img src="{{ asset('images/color-scheme/salmon.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('blue-theme', 60)"><img src="{{ asset('images/color-scheme/blue.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('red-theme', 60)"><img src="{{ asset('images/color-scheme/red.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('olive-theme', 60)"><img src="{{ asset('images/color-scheme/olive.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('darkred-theme', 60)"><img src="{{ asset('images/color-scheme/darkred.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('teal-theme', 60)"><img src="{{ asset('images/color-scheme/teal.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('yellow-theme', 60)"><img src="{{ asset('images/color-scheme/yellow.png') }}" width="50" height="50" alt="" /></a>
+<a href="javascript:chooseStyle('green-theme', 60)"><img src="{{ asset('images/color-scheme/green.png') }}" width="50" height="50" alt="" /></a>
+</div>
+</div>
 
- <div class="stBlock text-center" style="margin: 0px 32px 25px 20px;">
-  <a class="btn btn-primary black-hover" href="javascript:chooseStyle('none', 60)">Reset color</a>
- </div>
+<div class="stBlock text-center" style="margin: 0px 32px 25px 20px;">
+<a class="btn btn-primary black-hover" href="javascript:chooseStyle('none', 60)">Reset color</a>
+</div>
 
 
 </div>
